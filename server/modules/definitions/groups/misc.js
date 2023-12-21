@@ -147,7 +147,7 @@ exports.gunnerDominator = {
 exports.trapperDominator = {
     PARENT: ["dominator"],
     UPGRADE_LABEL: 'Trapper',
-    FACING_TYPE: "autospin",
+    FACING_TYPE: ["spin", {speed: 0.02}],
     CONTROLLERS: ["alwaysFire"],
     GUNS: [
         {
@@ -284,7 +284,7 @@ exports.sanctuary = {
     LABEL: "Sanctuary",
     LEVEL: 45,
     SIZE: 20,
-    FACING_TYPE: "autospin",
+    FACING_TYPE: ["spin", {speed: 0.02}],
     CONTROLLERS: ["alwaysFire"],
     SKILL: skillSet({
         rld: 1.25,
@@ -1077,7 +1077,7 @@ exports.baseProtector = {
         RESIST: 10000,
         HETERO: 0,
     },
-    FACING_TYPE: "autospin",
+    FACING_TYPE: ["spin", {speed: 0.02}],
     TURRETS: [
         {
             POSITION: [25, 0, 0, 0, 360, 0],
@@ -1343,7 +1343,7 @@ exports.tracker3gun = {
 exports.tracker3 = {
   PARENT: ["genericTank"],
   LABEL: "Tracker-3",
-  FACING_TYPE: "autospin",
+  FACING_TYPE: ["spin", {speed: 0.02}],
   SKILL_CAP: [0, 0, 0, 0, 0, smshskl, smshskl, smshskl, smshskl, smshskl],
   TURRETS: [
     {

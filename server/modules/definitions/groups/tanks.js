@@ -87,7 +87,7 @@ exports.minimissile = {
 }
 exports.spinmissile = {
     PARENT: "missile",
-    FACING_TYPE: "fastspin",
+    FACING_TYPE: ["spin", {speed: 0.1}],
     GUNS: [
         {
             POSITION: [14, 8, 1, 0, 0, 0, 0],
@@ -2024,7 +2024,7 @@ exports.auto3 = {
     PARENT: ["genericTank"],
     LABEL: "Auto-3",
     DANGER: 6,
-    FACING_TYPE: "autospin",
+    FACING_TYPE: ["spin", {speed: 0.02}],
     TURRETS: [
         {
             POSITION: [11, 8, 0, 0, 190, 0],
@@ -2257,7 +2257,7 @@ exports.auto5 = {
     PARENT: ["genericTank"],
     LABEL: "Auto-5",
     DANGER: 7,
-    FACING_TYPE: "autospin",
+    FACING_TYPE: ["spin", {speed: 0.02}],
     TURRETS: [
         {
             POSITION: [11, 8, 0, 0, 190, 0],
@@ -2288,7 +2288,7 @@ exports.mega3 = {
         SPEED: 0.95 * base.SPEED,
     },
     DANGER: 7,
-    FACING_TYPE: "autospin",
+    FACING_TYPE: ["spin", {speed: 0.02}],
     TURRETS: [
         {
             POSITION: [14, 8, 0, 0, 190, 0],
@@ -2307,7 +2307,7 @@ exports.mega3 = {
 exports.auto4 = {
     PARENT: ["genericTank"],
     LABEL: "Auto-4",
-    FACING_TYPE: "autospin",
+    FACING_TYPE: ["spin", {speed: 0.02}],
     DANGER: 7,
     TURRETS: [
         {
@@ -2336,7 +2336,7 @@ exports.banshee = {
         SPEED: 0.8 * base.SPEED,
         FOV: 1.1 * base.FOV,
     },
-    FACING_TYPE: "autospin",
+    FACING_TYPE: ["spin", {speed: 0.02}],
     TURRETS: [
         {
             POSITION: [10, 8, 0, 0, 80, 0],
@@ -3729,7 +3729,7 @@ exports.architect = {
     },
     PARENT: ["genericTank"],
     DANGER: 7,
-    FACING_TYPE: "autospin",
+    FACING_TYPE: ["spin", {speed: 0.02}],
     TURRETS: [
         {
             POSITION: [12, 8, 0, 0, 190, 0],
@@ -3841,6 +3841,7 @@ exports.conqueror = {
     BODY: {
         SPEED: 0.8 * base.SPEED,
     },
+    REVERSE_TARGET_WITH_TANK: true,
     GUNS: [
         {
             POSITION: [21, 14, 1, 0, 0, 180, 0],

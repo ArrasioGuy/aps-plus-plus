@@ -781,7 +781,7 @@ const socketInit = port => {
                 if (commands[i]) o += Math.pow(2, i);
             }
             let ratio = util.getRatio();
-            socket.talk('C', Math.round(global.target.x / ratio), Math.round(global.target.y / ratio), o);
+            socket.talk('C', Math.round(global.target.x / ratio), Math.round(global.target.y / ratio), global.reverseTank, o);
         },
         check: () => flag,
         getMotion: () => ({

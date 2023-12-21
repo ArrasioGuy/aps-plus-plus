@@ -267,10 +267,8 @@ global.player = {
 function calculateTarget() {
     global.target.x = global.mouse.x - (global.player.screenx / global.screenWidth * window.canvas.width + window.canvas.width / 2);
     global.target.y = global.mouse.y - (global.player.screeny / global.screenHeight * window.canvas.height + window.canvas.height / 2);
-    if (window.canvas.reverseDirection) {
-        global.target.x *= -1;
-        global.target.y *= -1;
-    }
+    if (window.canvas.reverseDirection) global.reverseTank = -1;
+    else global.reverseTank = 1;
     global.target.x *= global.screenWidth / window.canvas.width;
     global.target.y *= global.screenHeight / window.canvas.height;
     if (settings.graphical.screenshotMode && Math.abs(Math.atan2(global.target.y, global.target.x) + Math.PI/2) < 0.035) global.target.x = 0; 
@@ -1155,7 +1153,7 @@ function drawEntities(px, py, ratio) {
         }
         instance.render.x = util.lerp(instance.render.x, Math.round(instance.x + instance.vx), 0.1, true);
         instance.render.y = util.lerp(instance.render.y, Math.round(instance.y + instance.vy), 0.1, true);
-        instance.render.f = instance.id === gui.playerid && !global.autoSpin && !instance.twiggle && !global.died ? Math.atan2(global.target.y, global.target.x) : util.lerpAngle(instance.render.f, instance.facing, 0.15, true);
+        instance.render.f = instance.id === gui.playerid && !global.autoSpin && !instance.twiggle && !global.died ? Math.atan2(global.target.y * global.reverseTank, global.target.x * global.reverseTank) : util.lerpAngle(instance.render.f, instance.facing, 0.15, true);
         let x = ratio * instance.render.x - px,
             y = ratio * instance.render.y - py,
             baseColor = instance.color;

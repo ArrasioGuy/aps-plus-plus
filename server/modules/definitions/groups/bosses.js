@@ -78,7 +78,7 @@ exports.minibossBase = {
     }),
     LEVEL: 45,
     CONTROLLERS: ["nearestDifferentMaster", "canRepel"],
-    FACING_TYPE: "autospin",
+    FACING_TYPE: ['spin', {speed: 0.02}],
     HITS_OWN_TYPE: "hardOnlyBosses",
     BROADCAST_MESSAGE: "A visitor has left!",
     BODY: { PUSHABILITY: 0.05 }
@@ -603,7 +603,7 @@ exports.eliteSpinner = {
     UPGRADE_LABEL: "Elite Spinner",
     UPGRADE_COLOR: "pink",
     AI: { STRAFE: false },
-    FACING_TYPE: "fastspin",
+    FACING_TYPE: ["spin", {speed: 0.1}],
     GUNS: [],
     TURRETS: [
         {
@@ -813,7 +813,6 @@ exports.sorcerer = {
     UPGRADE_COLOR: "veryLightGrey",
     SIZE: 26,
     MAX_CHILDREN: 50,
-    FACING_TYPE: "autospin",
     VALUE: 2e5,
     BODY: {
         FOV: 0.5,
@@ -842,7 +841,6 @@ exports.summoner = {
     UPGRADE_COLOR: "gold",
     SIZE: 26,
     MAX_CHILDREN: 28,
-    FACING_TYPE: "autospin",
     VALUE: 3e5,
     BODY: {
         FOV: 0.5,
@@ -876,7 +874,6 @@ exports.enchantress = {
     UPGRADE_COLOR: "orange",
     SIZE: 26,
     MAX_CHILDREN: 28,
-    FACING_TYPE: "autospin",
     VALUE: 4e5,
     BODY: {
         FOV: 0.5,
@@ -910,7 +907,6 @@ exports.exorcistor = {
     UPGRADE_COLOR: "purple",
     SIZE: 26,
     MAX_CHILDREN: 20,
-    FACING_TYPE: "autospin",
     VALUE: 5e5,
     BODY: {
         FOV: 0.5,
@@ -944,7 +940,6 @@ exports.shaman = {
     UPGRADE_COLOR: "teal",
     SIZE: 26,
     MAX_CHILDREN: 20,
-    FACING_TYPE: "autospin",
     VALUE: 6e5,
     BODY: {
         FOV: 0.5,
@@ -2519,7 +2514,6 @@ exports.zenphiaBoss = {
     COLOR: "lightGreen",
     UPGRADE_COLOR: "lightGreen",
     SIZE: 50,
-    FACING_TYPE: "autospin",
     VALUE: 5e6,
     BODY: {
         FOV: 0.75,

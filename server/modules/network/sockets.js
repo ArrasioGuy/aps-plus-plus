@@ -253,7 +253,7 @@ function incoming(message, socket) {
             break;
         case "C":
             // command packet
-            if (m.length !== 3) {
+            if (m.length !== 4) {
                 socket.kick("Ill-sized command packet.");
                 return 1;
             }
@@ -262,7 +262,8 @@ function incoming(message, socket) {
                     x: m[0],
                     y: m[1],
                 },
-                commands = m[2];
+                reverseTank = m[2],
+                commands = m[3];
             // Verify data
             if (
                 typeof target.x !== "number" ||
@@ -291,6 +292,7 @@ function incoming(message, socket) {
             // }
             // Put the new target in
             player.target = target;
+            player.body.reverseTank = reverseTank;
             // Process the commands
             if (player.command != null && player.body != null) {
                 player.command.up = commands & 1;
