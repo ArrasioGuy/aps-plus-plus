@@ -3168,6 +3168,58 @@ exports.trplnrBossVulnerableForm = {
     }]
 }
 
+exports.clashtestBossAura = addAura(0.2, 2.7, 0.05, "blue");
+exports.clashtestBossAuraMain = addAura(0.5, 2.5, 0.075, "lightblue");
+exports.clashtestBoss = {
+    PARENT: "genericTank",
+    LABEL: "Hellstage",
+    NAME: "clashtest",
+    DANGER: 10,
+    SHAPE: 7,
+    COLOR: "purple",
+    UPGRADE_COLOR: "purple",
+    SIZE: 50,
+    VALUE: 5e6,
+    BODY: {
+        FOV: 1.05,
+        SPEED: 0.6 * base.SPEED,
+        HEALTH: 10 * base.HEALTH,
+        DAMAGE: 6 * base.DAMAGE
+    },
+    GUNS: [
+    ],
+    TURRETS: [
+        {
+            POSITION: [11, 0, 0, 0, 360, 1],
+            TYPE: 'clashtestBossAuraMain'
+        },
+        {
+            POSITION: [10.5, 0, 0, 0, 360, 1],
+            TYPE: 'clashtestBossAura'
+        },
+        {
+            POSITION: [10, 0, 0, 0, 360, 1],
+            TYPE: 'clashtestBossAura'
+        },
+        {
+            POSITION: [9.5, 0, 0, 0, 360, 1],
+            TYPE: 'clashtestBossAura'
+        },
+        {
+            POSITION: [9, 0, 0, 0, 360, 1],
+            TYPE: 'clashtestBossAura'
+        },
+        {
+            POSITION: [8.5, 0, 0, 0, 360, 1],
+            TYPE: 'clashtestBossAura'
+        },
+        {
+            POSITION: [8, 0, 0, 0, 360, 1],
+            TYPE: 'clashtestBossAura'
+        }
+    ]
+}
+
 let testLayeredBoss = new LayeredBoss("testLayeredBoss", "Test Layered Boss", "terrestrial", 7, 3, "terrestrialTrapTurret", 5, 7, {SPEED: 10});
 testLayeredBoss.addLayer({gun: {
     POSITION: [3.6, 7, -1.4, 8, 0, null, 0],
