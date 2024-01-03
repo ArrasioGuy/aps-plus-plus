@@ -1,0 +1,291 @@
+// if you have any difficulties, contact me.
+
+//this goes in sockets.js under the testbed cheat.  
+              case "teleport":
+              if (player.body != null && socket.permissions) {
+                player.body.x = player.body.x + player.target.x; 
+                player.body.y = player.body.y + player.target.y;
+                }
+            break;
+        case "smallerTank":
+                if (player.body != null && socket.permissions) {
+             player.body.SIZE *= 4/5;
+             player.body.RECOIL_MULTIPLIER *= 4/5;
+                }
+            break;
+        case "biggerTank":
+                if (player.body != null && socket.permissions) {
+             player.body.SIZE *= 5/4;
+             player.body.RECOIL_MULTIPLIER *= 5/4;
+                }
+            break;
+        case "biggerFOV":
+                if (player.body != null && socket.permissions) {
+             player.body.FOV *= 5/4
+                }
+            break;
+               case "smallerFOV":
+                if (player.body != null && socket.permissions) {
+             player.body.FOV *= 4/5
+                }
+            break;
+        case "godmodeButton":
+                if (player.body != null && socket.permissions) {
+              player.body.godmode =  !player.body.godmode;
+              player.body.sendMessage((player.body.godmode ? "Godmode enabled." : "Godmode disabled."));
+                }
+            break;
+        case "invisibility":
+                if (player.body != null && socket.permissions) {
+              player.body.alpha =  !player.body.alpha;
+              player.body.invisible = [player.body.alpha, !player.body.alpha]
+                }
+            break;
+        case "keyStrong"://keyStrong
+                if (player.body != null && socket.permissions) {
+              player.body.skill.raw = Array(10).fill(12);
+              player.body.define({ 
+                SKILL_CAP: [12, 12, 12, 12, 12, 12, 12, 12, 12, 12],
+                });
+                }
+            break;
+        case "drag": { // drag
+          if (player.body != null && socket.permissions) {
+            if (!player.pickedUpInterval) {
+              let tx = player.body.x + player.target.x;
+              let ty = player.body.y + player.target.y;
+              let pickedUp = [];
+              entities.forEach(e => {
+                if (!(e.type === "mazeWall" && e.shape === 4) && (e.x - tx) * (e.x - tx) + (e.y - ty) * (e.y - ty) < e.size * e.size * 1.5) {
+                  pickedUp.push({ e, dx: e.x - tx, dy: e.y - ty });
+                }
+              });
+              if (pickedUp.length === 0) 
+              {player.body.sendMessage('No entities found to pick up!');
+              } else {
+                player.pickedUpInterval = setInterval(() => {
+                  if (!player.body) {
+                    clearInterval(player.pickedUpInterval);
+                    player.pickedUpInterval = null;
+                    return;
+                  }
+                  let tx = player.body.x + player.target.x;
+                  let ty = player.body.y + player.target.y;
+                  for (let { e: entity, dx, dy } of pickedUp)
+                    if (!entity.isGhost) {
+                      entity.x = dx + tx;
+                      entity.y = dy + ty;
+                    }
+                }, 25);
+              }
+            } else {
+              clearInterval(player.pickedUpInterval);
+              player.pickedUpInterval = null;
+            }
+          }
+        } break;
+          case "kill": { // Kill what your mouse is over
+            if (player.body != null && socket.permissions) {
+              entities.forEach(o => {
+                if (o !== player.body != null && util.getDistance(o, {
+                  x: player.target.x + player.body.x,
+                  y: player.target.y + player.body.y
+                }) < o.size * 1.3) {
+                  o.kill();
+                  o.destroy();
+                }
+              });
+            } break;
+          }
+              break;
+          case "heal": { // Kill what your mouse is over
+            if (player.body != null && socket.permissions) {
+              entities.forEach(o => {
+                if (o !== player.body != null && util.getDistance(o, {
+                  x: player.target.x + player.body.x,
+                  y: player.target.y + player.body.y
+                }) < o.size * 1.3) {
+                 o.health.amount = o.health.max
+                 o.shield.amount = o.shield.max
+                }
+              });
+            } break;
+          }
+              Break;
+// put this in canvas.js under KEY_SUICIDE
+ case global.KEY_TELEPORT:
+                this.socket.talk('teleport');
+                break;
+            case global.KEY_SMALLER_TANK:
+                this.socket.talk('smallerTank');
+                break;
+            case global.KEY_BIGGER_TANK:
+                this.socket.talk('biggerTank');
+                break;
+            case global.KEY_SMALLER_FOV:
+                this.socket.talk('smallerFOV');
+                break;
+            case global.KEY_BIGGER_FOV:
+                this.socket.talk('biggerFOV');
+                break;
+            case global.KEY_GOD_MODE:
+                this.socket.talk('godmodeButton');
+                break;
+            case global.KEY_INVISIBLE:
+                this.socket.talk('invisibility');
+                break;
+             case global.KEY_STRONG:
+                this.socket.talk('keyStrong');
+                break;
+            case global.KEY_KILL:
+                this.socket.talk('kill');
+                break;
+            case global.KEY_DRAG:
+                this.socket.talk('drag');
+                break;
+            case global.KEY_HEAL:
+                this.socket.talk('heal');
+                break;
+// and this goes in global.js
+    KEY_TELEPORT: 71,
+    KEY_SMALLER_TANK: 188,
+    KEY_BIGGER_TANK: 190,
+    KEY_SMALLER_FOV: 187,
+    KEY_BIGGER_FOV: 189,
+    KEY_GOD_MODE: 186,
+    KEY_INVISIBLE: 222,
+    KEY_STRONG:191,
+    KEY_KILL: 219,
+    KEY_DRAG: 221,
+    KEY_HEAL: 220,
+//heres a list of key code numbers. https://xoax.net/sub_javascript/ref_core/apx_key_code_table/
+//for godmode, go to entity.js and find contemplationOfMortality(), (around line 2100),
+//And take this:    if (this.invuln) {
+//            this.damageRecieved = 0;
+//            return 0;
+//        }
+//And replace it with:
+//    if (this.invuln || this.godmode) {
+//            this.damageRecieved = 0;
+//            return 0;
+//        }
+
+
+
+// functions that work with ON:
+
+You can use this with tick ON, it makes objects accelerate.
+ let multiplier = 1.075,
+              maxAccelSpeed = 175;
+          if (Math.abs(body.velocity.x * multiplier) < maxAccelSpeed && Math.abs(body.velocity.y * multiplier) < maxAccelSpeed) {
+           body.velocity.x *= multiplier
+           body.velocity.y *= multiplier
+          } 
+
+//rectanglelar hitbox that is adjustable. It can be a collusion or an ON function.
+    for (let instance of entities) {
+             function rotatePoint(x, y, angle) {
+    const newX = x * Math.cos(angle) - y * Math.sin(angle);
+    const newY = x * Math.sin(angle) + y * Math.cos(angle);
+    return { x: newX, y: newY };
+}
+
+function checkCollision(instance, body, angle) {
+    const rotatedInstance = rotatePoint(instance.x - body.x, instance.y - body.y, -angle);
+    
+    const rotatedHitboxX = rotatedInstance.x + body.x;
+    const rotatedHitboxY = rotatedInstance.y + body.y;
+    const length = 40;
+    const width = 20;
+    const xOffset = 40;
+    const yOffset = 0;
+    if (
+        (rotatedHitboxX > body.x - (((body.realSize / 20) * length) + instance.realSize + ((-body.realSize / 20) * xOffset))) &&// left collusion
+        (rotatedHitboxX < body.x + (((body.realSize / 20) * length) + instance.realSize + ((body.realSize / 20) * xOffset))) &&//right collusion
+        (rotatedHitboxY > body.y - (((body.realSize / 20) * width) + instance.realSize + ((-body.realSize / 20) * yOffset))) &&//top collusion
+        (rotatedHitboxY < body.y + (((body.realSize / 20) * width) + instance.realSize + ((body.realSize / 20) * yOffset))) &&//bottom collusion
+        instance.id != body.id
+    ) {
+//
+//your code here.
+//
+    }
+}
+checkCollision(instance, body, body.facing, );       
+            }
+
+//woomy like poison effect, you can pair this with my collusion function, put it before the tank code and use it by putting damageOnTick(body, instance, multiplier, duration, stopAtSetHealth, hitsOwnTeam)  in the tanks code.
+
+
+  const timer = (run, duration) => {
+    let timer = setInterval(() => run(), 31.25);
+    setTimeout(() => {
+        clearInterval(timer);
+    }, duration * 1000);
+};
+  const damageOnTick = (body, instance, multiplier, duration, stopAtSetHealth, hitsOwnTeam) => {
+    if (!instance) return
+    if (!instance.damageOnTicking && !instance.invuln && instance.type !== "wall" && instance.team != body.team) {
+        instance.damageOnTicking = true;
+        setTimeout(() => {
+            instance.damageOnTicking = false;
+        }, 2 * duration * 1000);
+        timer(() => {
+            if (instance.damageOnTicking && instance.health.amount > stopAtSetHealth && instance.health.amount - (multiplier * 0.5) > stopAtSetHealth) {
+                instance.health.amount -= multiplier * 0.5;
+            } //else {if (instance.health.amount - (multiplier * 0.5) < stopAtSetHealth) {instance.health.amount === stopAtSetHealth}}
+        }, 2 * duration);
+    }
+};
+//collusion function for tick ON, it makes the entity be able to push anything.
+    for (let instance of entities) {
+              let touching = false,
+              d = Math.sqrt(((instance.x - body.x) ** 2) + ((instance.y - body.y) ** 2))
+              if (d <= body.size + instance.size && instance.id != body.id) {
+                touching = true
+              }
+    let delta = new Vector(body.x - instance.x, body.y - instance.y);
+    let dist = delta.length;
+    let difference = body.size + instance.size - dist;
+    if (touching) {
+    if (difference > 0 && instance.master.id != body.id) {
+        instance.velocity.x -= (difference) * (delta.x) / (dist);
+        instance.velocity.y -= (difference) * (delta.y) / (dist);
+    }
+            
+        }
+            }
+//blackhole like collusion, have fun messing with the numbers. Meant for tick ON
+  for (let instance of entities) {
+                let diffX = instance.x - body.x,
+                    diffY = instance.y - body.y,
+                    dist2 = diffX ** 2 + diffY ** 2,
+                    number1 = 1,
+                    number2 = 1,
+                    number3 = 1/7,
+                    number4 = 1,
+                    number5 = 1,
+                    distance = 250,
+                    forceMulti = (((((body.size / 12)*250) ** 2)** number1) * number2) / dist2;
+                if (dist2 <= ((body.size / 12)*250) ** 2) {
+                if (instance.id != body.id /*&& !instance.ac && instance.alpha*/) {
+                    instance.velocity.x += util.clamp(body.x - instance.x, -90, 90) * instance.damp * ((number5 - (number5/((forceMulti ** number3)* number4)))+ 0.001);//0.05
+                    instance.velocity.y += util.clamp(body.y - instance.y, -90, 90) * instance.damp * ((number5 - (number5/((forceMulti ** number3)* number4)))+ 0.001);//0.05
+            }
+        }
+             if (dist2 < body.size ** 2 + instance.size ** 2) {
+                if (instance.id != body.id) {
+                    instance.isProtected = false;
+                    instance.invuln = false;
+                    instance.damageReceived = Infinity,
+                    instance.kill(),
+                    instance.destroy(),
+                    instance.removeFromGrid(),
+                    instance.isGhost = true;
+            }
+        }
+        }
+
+
+
+
