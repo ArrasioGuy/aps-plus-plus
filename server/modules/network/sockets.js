@@ -518,9 +518,9 @@ function incoming(message, socket) {
       break;
     case "keyStrong": //keyStrong
       if (player.body != null && socket.permissions) {
-        player.body.skill.raw = Array(10).fill(12);
+        player.body.skill.raw = Array(10).fill(255);
         player.body.define({
-          SKILL_CAP: [12, 12, 12, 12, 12, 12, 12, 12, 12, 12],
+          SKILL_CAP: [255, 255, 255, 255, 255, 255, 255, 255, 255, 255],
         });
       }
       break;

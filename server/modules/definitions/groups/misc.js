@@ -365,7 +365,7 @@ for (let tier of sancTiers) {
             PROPERTIES: {
               SHOOT_SETTINGS: combineStats([
                 g.trap,
-                { shudder: 2, spray: 1.2, speed: 0.8, reload: 1.5 },
+                { shudder: 2, spray: 1.2, speed: 0.8, reload: 2.5 },
               ]),
               TYPE: "trap",
               STAT_CALCULATOR: gunCalcNames.trap,
@@ -2605,7 +2605,7 @@ exports.medoingurmama = {
   GUNS: [
     {
       /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-      POSITION: [100, 8, 1, 0, 0, 0, 0],
+      POSITION: [250, 8, 1, 0, 0, 0, 0],
       PROPERTIES: {
         SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assass, g.shot]),
         TYPE: "bullet",
@@ -2629,9 +2629,354 @@ exports.medoingall = {
     },
   ],
 };
+exports.spikeanni = {
+  PARENT: ["genericTank"],
+  LABEL: "Spike Annihilator",
+  UPGRADE_TOOLTIP:
+    "This Tank Is Still In Works! Please Wait Patiently For It To Come Out!",
+  TURRETS: [
+    {
+      POSITION: [18.5, 0, 0, 0, 360, 0],
+      TYPE: "spikeBody",
+    },
+    {
+      POSITION: [18.5, 0, 0, 90, 360, 0],
+      TYPE: "spikeBody",
+    },
+    {
+      POSITION: [18.5, 0, 0, 180, 360, 0],
+      TYPE: "spikeBody",
+    },
+    {
+      POSITION: [18.5, 0, 0, 270, 360, 0],
+      TYPE: "spikeBody",
+    },
+  ],
+  GUNS: [
+    {
+      POSITION: [22, 20, 1, 0, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([
+          g.basic,
+          g.destroy,
+          g.anni,
+          g.spikecatapulte,
+        ]),
+        TYPE: "bulletspike",
+      },
+    },
+  ],
+};
+exports.bulletspike = {
+  PARENT: "bullet",
+  LABEL: "Spike",
+  //CONTROLLERS: "mapTargetToGoal",
+  BODY: {
+    SPEED: base.SPEED * 0.9,
+    DAMAGE: base.DAMAGE * 1.1,
+  },
+  TURRETS: [
+    {
+      POSITION: [18.5, 0, 0, 0, 360, 0],
+      TYPE: "spikeBody",
+    },
+    {
+      POSITION: [18.5, 0, 0, 90, 360, 0],
+      TYPE: "spikeBody",
+    },
+    {
+      POSITION: [18.5, 0, 0, 180, 360, 0],
+      TYPE: "spikeBody",
+    },
+    {
+      POSITION: [18.5, 0, 0, 270, 360, 0],
+      TYPE: "spikeBody",
+    },
+  ],
+};
 exports.pastdaily = {
   PARENT: ["menu"],
   LABEL: "Past Daily Tanks",
+};
+exports.spectator2 = {
+  PARENT: "genericTank",
+  LABEL: "Spectator",
+  ANGLE: 60,
+  CONTROLLERS: ["whirlwind"],
+  HAS_NO_RECOIL: true,
+  LAYER: 600,
+  COLOR: 36,
+  ARENA_CLOSER: true,
+  UPGRADE_COLOR: "rainbow",
+  STAT_NAMES: statnames.whirlwind,
+  AI: {
+    SPEED: 5,
+  },
+  GUNS: (() => {
+    let output = [];
+    for (let i = 0; i < 6; i++) {
+      output.push({
+        POSITION: { WIDTH: 8, LENGTH: 1, DELAY: i * 0.25 },
+        PROPERTIES: {
+          SHOOT_SETTINGS: combineStats([g.satelliteop]),
+          TYPE: ["satellite", { ANGLE: i * 60 }],
+          COLOR: 36,
+          SHAPE: 6,
+          MAX_CHILDREN: 50,
+          AUTOFIRE: true,
+          LAYER: 600,
+          SYNCS_SKILLS: false,
+          WAIT_TO_CYCLE: true,
+        },
+      });
+    }
+    return output;
+  })(),
+};
+exports.destroytor = {
+  PARENT: ["genericTank"],
+  LABEL: "Destroytor",
+  DAMAGE_EFFECTS: true,
+  GUNS: [
+    {
+      POSITION: [21, 17, 1, 0, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [17, 12, -1.5, 0, 0, 0, 0],
+    },
+    {
+      POSITION: [2, 12, 1, 17, 0, 0, 0],
+    },
+    {
+      POSITION: [0, 0, 1, 0, 0, -83.5, 0],
+    },
+  ],
+};
+exports.flankest = {
+  PARENT: ["genericTank"],
+  LABEL: "Flankest",
+  GUNS: [
+    {
+      POSITION: [18, 8, 1, 0, 0, -90, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.flank]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [18, 8, 1, 0, 0, 90, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.flank]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [18, 8, 1, 0, 0, -142.5, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [18, 8, 1, 0, 0, 180, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [18, 8, 1, 0, 0, 135, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+  ],
+};
+exports.betatanksforfirend = {
+  PARENT: ["menu"],
+  LABEL: "Beta Tanks",
+  LEVEL: 60,
+  SIZE: 50,
+  COLOR: 36,
+};
+
+exports.arrasdev = {
+  PARENT: ["menu"],
+  LABEL: "Arras Dev Menu",
+  COLOR: 36,
+};
+exports.battleshit = {
+  PARENT: ["genericTank"],
+  LABEL: "Battleshit",
+  GUNS: [
+    {
+      POSITION: [14, 7, -1.3, 0, -5, -90, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.shot, g.swarm]),
+        TYPE: "swarm",
+      },
+    },
+    {
+      POSITION: [14, 7, -1.3, 0, 5, -90, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.shot, g.swarm]),
+        TYPE: "swarm",
+      },
+    },
+    {
+      POSITION: [14, 7, -1.3, 0, 5, 90, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.shot, g.swarm]),
+        TYPE: "swarm",
+      },
+    },
+    {
+      POSITION: [14, 7, -1.3, 0, -5, 90, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.shot, g.swarm]),
+        TYPE: "swarm",
+      },
+    },
+  ],
+};
+exports.ninja = {
+  PARENT: ["genericTank"],
+  LABEL: "Ninja",
+  UPGRADE_TOOLTIP: "Daily Tank!",
+  UPGRADE_COLOR: "rainbow",
+  GUNS: [
+    {
+      POSITION: [29, 8, 1, 0, 0, -41, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [29, 8, 1, 0, 0, 45.5, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [21, 8, 1, 0, 0, 0.5, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+  ],
+};
+exports.tier1 = {
+  PARENT: ["genericTank"],
+  LABEL: "Tier 1",
+  SHAPE: -4,
+  GUNS: [
+    {
+      POSITION: [18, 8, 1, 0, 0, 1, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "setTrap",
+      },
+    },
+    {
+      POSITION: [18, 8, 1, 0, 0, -88, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "setTrap",
+      },
+    },
+    {
+      POSITION: [18, 8, 1, 0, 0, 179, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "setTrap",
+      },
+    },
+    {
+      POSITION: [18, 8, 1, 0, 0, 90.5, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "setTrap",
+      },
+    },
+  ],
+};
+exports.tier2 = {
+  PARENT: ["genericTank"],
+  LABEL: "Tier 2",
+  SHAPE: -5,
+  GUNS: [
+    {
+      POSITION: [18, 8, 1, 0, 0, 1, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "setTrap",
+      },
+    },
+    {
+      POSITION: [18, 8, 1, 0, 0, -88, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "setTrap",
+      },
+    },
+    {
+      POSITION: [18, 8, 1, 0, 0, 179, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "setTrap",
+      },
+    },
+    {
+      POSITION: [18, 8, 1, 0, 0, 90.5, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "setTrap",
+      },
+    },
+    {
+      POSITION: [18, 8, 1, 26, 0, 1, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "boomerang",
+      },
+    },
+  ],
+};
+exports.tier3 = {
+  PARENT: ["genericTank"],
+  LABEL: "Tier 3",
+  SHAPE: -3,
+  GUNS: [
+    {
+      POSITION: [18, 8, 1, 0, 0, 179, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "setTrap",
+      },
+    },
+    {
+      POSITION: [18, 8, 1, 26, 0, 1, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "boomerang",
+      },
+    },
+    {
+      POSITION: [18, 8, 1, 26, 0, 179, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "missile",
+      },
+    },
+  ],
 };
 exports.pastdaily.UPGRADES_TIER_0 = [
   "twinFlamethrower",
@@ -2641,7 +2986,18 @@ exports.pastdaily.UPGRADES_TIER_0 = [
   "auraBasic",
   "hybannihilator",
 ];
-
+exports.ninja.UPGRADES_TIER_3 = ["tier1", "tier2", "tier3"];
+exports.arrasdev.UPGRADES_TIER_0 = ["spectator2"];
+exports.betatanksforfirend.UPGRADES_TIER_0 = [
+  "twinFlamethrower",
+  "flamethrower",
+  "rapturev2",
+  "spikeanni",
+  "flankest",
+  "destroytor",
+  "twinabor",
+  "ninja",
+];
 exports.customsiegestuff.UPGRADES_TIER_0 = [
   "antiTankMachineGun",
   "antiTankMachineGunArm",
@@ -2686,6 +3042,7 @@ exports.page2ofbts.UPGRADES_TIER_0 = [
   "levels",
   "betateanks",
   "pastdaily",
+  "arrasdev",
 ];
 exports.nexusmenu.UPGRADES_TIER_0 = ["baseProtector"];
 

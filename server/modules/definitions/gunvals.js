@@ -68,7 +68,11 @@ module.exports = {
     density: 4,
     spray: 0.25,
   },
-  shot: { reload: 0.01, size: 1, },
+  spikecatapulte: {
+    speed: 3,
+    maxSpeed: 2.75,
+  },
+  shot: { reload: 0.01, size: 1 },
   // Bases
   basic: {
     reload: 18,
@@ -497,6 +501,13 @@ module.exports = {
     resist: 1.15,
   },
   satellite: { size: 0.8, reload: 3, damage: 1.875 },
+  satelliteop: {
+    size: 0.8,
+    reload: 0.4,
+    damage: 99e99,
+    pen: 99e99,
+    health: 99e99,
+  },
 
   // Heavy cannons
   pound: {
@@ -536,6 +547,13 @@ module.exports = {
     speed: 1.15,
     maxSpeed: 1.1,
     density: 1.5,
+  },
+  rapture: {
+    speed: 4.5,
+    maxSpeed: 5,
+    damage: 5,
+    pen: 1,
+    health: 3,
   },
   mortar: { reload: 1.2, health: 1.1, speed: 0.8, maxSpeed: 0.8 },
   destroyerDominator: {

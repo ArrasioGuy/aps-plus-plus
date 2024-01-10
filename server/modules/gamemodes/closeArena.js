@@ -2,7 +2,7 @@ let loop;
 function close() {
   sockets.broadcast("Closing!");
   clearInterval(loop);
-  setTimeout(process.exit, 1000000000000);
+  setTimeout(process.exit, 100000);
 }
 
 function closeArena() {

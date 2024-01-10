@@ -100,7 +100,7 @@ module.exports = {
   LEVEL_CHEAT_CAP: 45,
 
   // Amount of player-bots to spawn.
-  BOTS: 0,
+  BOTS: 5,
 
   // How much XP player-bots get per second until they reach LEVEL_CAP.
   BOT_XP: 125,
@@ -116,13 +116,13 @@ module.exports = {
 
   // Natural Spawns
 
-  FOOD_CAP: 3, // Max normal food per normal tile.
+  FOOD_CAP: 1, // Max normal food per normal tile.
   FOOD_SPAWN_CHANCE: 0.875, // Likeliness of normal food spawn attempts succeedingg.
   FOOD_SPAWN_COOLDOWN: 30, // Cooldown (in game ticks) of food spawn attempts being made.
 
-  FOOD_CAP_NEST: 3, // Max nest food per nest tile.
-  FOOD_SPAWN_CHANCE_NEST: 0.25, // Likeliness of nest food spawn attempts succeeding.
-  FOOD_SPAWN_COOLDOWN_NEST: 45, // Cooldown (in game ticks) of nest food spawn attempts being made.
+  FOOD_CAP_NEST: 1, // Max nest food per nest tile.
+  FOOD_SPAWN_CHANCE_NEST: 0.05, // Likeliness of nest food spawn attempts succeeding.
+  FOOD_SPAWN_COOLDOWN_NEST: 100, // Cooldown (in game ticks) of nest food spawn attempts being made.
 
   ENEMY_CAP_NEST: 1, // Max nest enemies per nest tile.
   ENEMY_SPAWN_CHANCE_NEST: 0.9, // Likeliness of nest enemies spawn attempts succeeding.

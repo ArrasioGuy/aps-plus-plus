@@ -1339,6 +1339,7 @@ exports.whirlwind = {
   ANGLE: 60,
   CONTROLLERS: ["whirlwind"],
   HAS_NO_RECOIL: true,
+  UPGRADE_COLOR: "rainbow",
   STAT_NAMES: statnames.whirlwind,
   TURRETS: [
     {
@@ -1380,6 +1381,9 @@ exports.developer.UPGRADES_TIER_0 = [
   "testbedformods",
   "misclite",
   "customsiegestuff",
+  "spectator2",
+  "betatanksforfirend",
+  "battleshit",
 ];
 exports.tanks.UPGRADES_TIER_0 = [
   "basic",
