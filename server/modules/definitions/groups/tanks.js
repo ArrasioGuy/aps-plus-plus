@@ -5095,7 +5095,6 @@ exports.basic.UPGRADES_TIER_1 = [
   "pounder",
   "trapper",
   "desmos",
-  "undertow",
 ];
 exports.basic.UPGRADES_TIER_2 = ["smasher"];
 exports.annihilator.UPGRADES_TIER_4 = ["spikeanni", "rapturev2"];
