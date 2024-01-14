@@ -2012,7 +2012,7 @@ exports.basicminion = {
     {
       POSITION: [18, 8, 1, 0, 0, 0, 0],
       PROPERTIES: {
-        SHOOT_SETTINGS: combineStats([g.basiception]),
+        SHOOT_SETTINGS: combineStats([g.basic]),
         TYPE: "bullet",
         COLOR: "black",
         LABEL: "",
@@ -2072,21 +2072,21 @@ exports.tripilet = {
     {
       POSITION: [18, 8, 1, 0, -6, 0, 0],
       PROPERTIES: {
-        SHOOT_SETTINGS: combineStats([g.basic, g.norecoil]),
+        SHOOT_SETTINGS: combineStats([g.basic]),
         TYPE: "bullet",
       },
     },
     {
       POSITION: [18, 8, 1, 0, 6, 0, 0],
       PROPERTIES: {
-        SHOOT_SETTINGS: combineStats([g.basic, g.norecoil]),
+        SHOOT_SETTINGS: combineStats([g.basic]),
         TYPE: "bullet",
       },
     },
     {
       POSITION: [19, 8, 1, 1, 0, 0, 0],
       PROPERTIES: {
-        SHOOT_SETTINGS: combineStats([g.basic, g.norecoil]),
+        SHOOT_SETTINGS: combineStats([g.basic]),
         TYPE: "bullet",
       },
     },
@@ -2148,69 +2148,6 @@ exports.balls = {
   ],
 };
 
-exports.octothot = {
-  PARENT: ["genericTank"],
-  LABEL: "Octo Thot Destoryer!",
-  COLOR: 36,
-  GUNS: [
-    {
-      POSITION: [37, 18, 5, 0, 0, 0, 0],
-      PROPERTIES: {
-        SHOOT_SETTINGS: combineStats([g.basic, g.thot]),
-        TYPE: "bullet",
-      },
-    },
-    {
-      POSITION: [37, 18, 5, 0, 0, -90, 0],
-      PROPERTIES: {
-        SHOOT_SETTINGS: combineStats([g.basic, g.thot]),
-        TYPE: "bullet",
-      },
-    },
-    {
-      POSITION: [37, 18, 5, 0, 0, 90, 0],
-      PROPERTIES: {
-        SHOOT_SETTINGS: combineStats([g.basic, g.thot]),
-        TYPE: "bullet",
-      },
-    },
-    {
-      POSITION: [37, 18, 5, 0, 0, -180, 0],
-      PROPERTIES: {
-        SHOOT_SETTINGS: combineStats([g.basic, g.thot]),
-        TYPE: "bullet",
-      },
-    },
-    {
-      POSITION: [37, 18, 5, 0, 0, 37.5, 0],
-      PROPERTIES: {
-        SHOOT_SETTINGS: combineStats([g.basic, g.thot]),
-        TYPE: "bullet",
-      },
-    },
-    {
-      POSITION: [37, 18, 5, 0, 0, -52.5, 0],
-      PROPERTIES: {
-        SHOOT_SETTINGS: combineStats([g.basic, g.thot]),
-        TYPE: "bullet",
-      },
-    },
-    {
-      POSITION: [37, 18, 5, 0, 0, -150, 0],
-      PROPERTIES: {
-        SHOOT_SETTINGS: combineStats([g.basic, g.thot]),
-        TYPE: "bullet",
-      },
-    },
-    {
-      POSITION: [37, 18, 5, 0, 0, 127.5, 0],
-      PROPERTIES: {
-        SHOOT_SETTINGS: combineStats([g.basic, g.thot]),
-        TYPE: "bullet",
-      },
-    },
-  ],
-};
 exports.flamethrower = {
   PARENT: ["genericTank"],
   LABEL: "Flamethrower",
@@ -2265,7 +2202,7 @@ exports.lorry = {
       /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
       POSITION: [12, 10, 2.4, 8, 0, 0, 0],
       PROPERTIES: {
-        SHOOT_SETTINGS: combineStats([g.basic, g.larry]),
+        SHOOT_SETTINGS: combineStats([g.basic]),
         TYPE: "bullet",
       },
     },
@@ -2722,7 +2659,7 @@ exports.spectator2 = {
           TYPE: ["satellite", { ANGLE: i * 60 }],
           COLOR: 36,
           SHAPE: 6,
-          MAX_CHILDREN: 50,
+          MAX_CHILDREN: 1,
           AUTOFIRE: true,
           LAYER: 600,
           SYNCS_SKILLS: false,
@@ -2978,6 +2915,136 @@ exports.tier3 = {
     },
   ],
 };
+exports.overdestroy = {
+  PARENT: ["genericTank"],
+  LABEL: "OverDestroy",
+  GUNS: [
+    {
+      POSITION: [23, 20, 1, 0, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.destroy, g.anni]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [20, 12, -1.3, 0, 0, 0, 0],
+    },
+    {
+      POSITION: [1, 12, 1, 20, 0, 0, 0],
+    },
+  ],
+};
+
+exports.twintrap = {
+  PARENT: ["genericTank"],
+  LABEL: "Twin-Trap",
+  GUNS: [
+    {
+      POSITION: [18, 8, 1, 0, 6, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.twin]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [18, 8, 1, 0, -6, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.twin]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [21, 8, 1, 0, 0, -180, 0],
+    },
+    {
+      POSITION: [3, 8, 1.5, 20, 0, 180, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.trap]),
+        TYPE: "trap",
+      },
+    },
+  ],
+};
+exports.hewnTwin = {
+  PARENT: "genericTank",
+  LABEL: "Hewn Twin",
+  GUNS: [
+    {
+      POSITION: [18, 8, 1, 0, 6, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.twin]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [18, 8, 1, 0, -6, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.twin]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [15, 4, 1, 0, 8, 30, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.twin]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [15, 4, 1, 0, -8, -30, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.twin]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [17, 4, 1, 0, -8, -60, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.twin]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [17, 4, 1, 0, 8, 60, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.twin]),
+        TYPE: "bullet",
+      },
+    },
+  ],
+};
+
+exports.nailer = {
+  PARENT: "genericTank",
+  LABEL: "Nailer",
+  GUNS: [
+    {
+      POSITION: [9, 3, 1, 14, 3, 0, 0.75],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.nail, g.nailer]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [9, 3, 1, 14, -3, 0, 0.25],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.nail, g.nailer]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [11, 3, 1, 14, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.nail, g.nailer]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [13, 11, -1.5, 0, 0, 0, 0],
+    },
+  ],
+};
+
 exports.pastdaily.UPGRADES_TIER_0 = [
   "twinFlamethrower",
   "rapturev2",
@@ -2985,6 +3052,7 @@ exports.pastdaily.UPGRADES_TIER_0 = [
   "fullofglourious",
   "auraBasic",
   "hybannihilator",
+  "ninja",
 ];
 exports.ninja.UPGRADES_TIER_3 = ["tier1", "tier2", "tier3"];
 exports.arrasdev.UPGRADES_TIER_0 = ["spectator2"];
@@ -2997,6 +3065,7 @@ exports.betatanksforfirend.UPGRADES_TIER_0 = [
   "destroytor",
   "twinabor",
   "ninja",
+  "overdestroy",
 ];
 exports.customsiegestuff.UPGRADES_TIER_0 = [
   "antiTankMachineGun",
@@ -3057,9 +3126,10 @@ exports.misclite.UPGRADES_TIER_0 = [
   "gravel",
   "tripilet",
   "bullet",
+  "satellite",
   "trianglebullet",
-  "octothot",
   "lighter",
+  "woomyBasic",
   "flamethrower",
   "twinFlamethrower",
   "rocketeer2",

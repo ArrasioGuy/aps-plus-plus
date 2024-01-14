@@ -41,6 +41,7 @@ exports.menu = {
 exports.developer = {
   PARENT: ["menu"],
   LABEL: "Developer",
+  COLOR: 37,
   BODY: {
     SHIELD: 1000,
     REGEN: 10,
@@ -729,28 +730,28 @@ exports.vulnturrettest = {
 };
 
 exports.turretLayerTesting = {
-  PARENT: "genericTank",
+  PARENT: "engineer",
   LABEL: "Turret Layer Testing",
   TURRETS: [
     {
       POSITION: [20, 10, 10, 0, 0, 2],
-      TYPE: ["basic", { COLOR: "lightGrey", MIRROR_MASTER_ANGLE: true }],
+      TYPE: ["engineer", { COLOR: "rainbow", MIRROR_MASTER_ANGLE: true }],
     },
     {
       POSITION: [20, 10, 5, 0, 0, 2],
-      TYPE: ["basic", { COLOR: "grey", MIRROR_MASTER_ANGLE: true }],
+      TYPE: ["engineer", { COLOR: "transgender", MIRROR_MASTER_ANGLE: true }],
     },
     {
       POSITION: [20, 10, -5, 0, 0, 1],
-      TYPE: ["basic", { COLOR: "darkGrey", MIRROR_MASTER_ANGLE: true }],
+      TYPE: ["engineer", { COLOR: "purple", MIRROR_MASTER_ANGLE: true }],
     },
     {
       POSITION: [20, -10, -5, 0, 0, -2],
-      TYPE: ["basic", { COLOR: "darkGrey", MIRROR_MASTER_ANGLE: true }],
+      TYPE: ["engineer", { COLOR: "blue", MIRROR_MASTER_ANGLE: true }],
     },
     {
       POSITION: [20, -10, 5, 0, 0, -1],
-      TYPE: ["basic", { COLOR: "grey", MIRROR_MASTER_ANGLE: true }],
+      TYPE: ["engineer", { COLOR: "red", MIRROR_MASTER_ANGLE: true }],
     },
   ],
 };
@@ -1498,6 +1499,7 @@ exports.testing.UPGRADES_TIER_0 = [
   "vanquisher",
   "mummifier",
   "tracker3",
+  "nailer",
 ];
 exports.features.UPGRADES_TIER_0 = [
   "diamondShape",

@@ -5095,9 +5095,9 @@ exports.basic.UPGRADES_TIER_1 = [
   "pounder",
   "trapper",
   "desmos",
+  "woomyBasic",
 ];
 exports.basic.UPGRADES_TIER_2 = ["smasher"];
-exports.annihilator.UPGRADES_TIER_4 = ["spikeanni", "rapturev2"];
 exports.smasher.UPGRADES_TIER_3 = [
   "megaSmasher",
   "spike",
@@ -5113,7 +5113,13 @@ exports.twin.UPGRADES_TIER_2 = [
   "hexaTank",
   "helix",
 ];
-exports.twin.UPGRADES_TIER_3 = ["dual", "bulwark", "musket"];
+exports.twin.UPGRADES_TIER_3 = [
+  "dual",
+  "bulwark",
+  "musket",
+  "hewnTwin",
+  "twintrap",
+];
 exports.doubleTwin.UPGRADES_TIER_3 = [
   "tripleTwin",
   "hewnDouble",
@@ -5168,6 +5174,7 @@ exports.gunner.UPGRADES_TIER_3 = [
   "gunnerTrapper",
   "cyclone",
   "overgunner",
+  "lighter",
 ];
 exports.sprayer.UPGRADES_TIER_3 = [
   "redistributor",
@@ -5182,9 +5189,11 @@ exports.flankGuard.UPGRADES_TIER_2 = [
   "auto3",
   "trapGuard",
   "triTrapper",
+  "flankest",
 ];
 exports.flankGuard.UPGRADES_TIER_3 = ["tripleTwin", "quadruplex"];
 exports.hexaTank.UPGRADES_TIER_3 = ["octoTank", "cyclone", "hexaTrapper"];
+exports.octoTank.UPGRADES_TIER_3 = ["flankest"];
 exports.triAngle.UPGRADES_TIER_3 = [
   "fighter",
   "booster",
@@ -5237,6 +5246,7 @@ exports.destroyer.UPGRADES_TIER_3 = [
   "annihilator",
   "hybrid",
   "construct",
+  "overdestroy",
 ];
 exports.artillery.UPGRADES_TIER_3 = [
   "mortar",
@@ -5274,9 +5284,9 @@ exports.trapGuard.UPGRADES_TIER_3 = [
   "gunnerTrapper",
   "bomber",
   "conqueror",
-  "bulwark",
+  "twintrap",
 ];
-
+exports.nailgun.UPGRADES_TIER_3 = ["nailer"];
 exports.desmos.UPGRADES_TIER_2 = ["volute", "helix"];
 exports.volute.UPGRADES_TIER_3 = ["sidewinder"];
 exports.helix.UPGRADES_TIER_3 = ["triplex", "quadruplex"];

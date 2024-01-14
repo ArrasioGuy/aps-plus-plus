@@ -5904,6 +5904,8 @@ Class.woomyDeveloperBody = {
 Class.woomyBasic = {
     PARENT: "woomy",
     LABEL: 'Basic',
+    UPGRADE_COLOR: "rainbow",
+    UPGRADE_TOOLTIP: "Daily Tank!",
     DANGER: 4,
     GUNS: [{
         POSITION: [18, 8, 1, 0, 0, 0, 0],

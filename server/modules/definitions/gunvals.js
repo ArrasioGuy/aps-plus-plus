@@ -277,7 +277,8 @@ module.exports = {
     resist: 1.1,
   },
   stream: { reload: 1.1, recoil: 0.6, damage: 0.65, speed: 1.24 },
-  nail: { reload: 0.85, recoil: 2.5, size: 0.8, damage: 0.7, density: 2 },
+  nail: { reload: 0.85, size: 0.8, damage: 0.7, density: 2 },
+  nailer: { damage: 0.7, pen: 0.55, health: 0.45 },
   gunner: {
     reload: 1.25,
     recoil: 0.25,
@@ -549,11 +550,11 @@ module.exports = {
     density: 1.5,
   },
   rapture: {
-    speed: 4.5,
-    maxSpeed: 5,
-    damage: 5,
-    pen: 1,
-    health: 3,
+    speed: 1.25,
+    maxSpeed: 1.75,
+    damage: 1,
+    pen: 0.25,
+    health: 1,
   },
   mortar: { reload: 1.2, health: 1.1, speed: 0.8, maxSpeed: 0.8 },
   destroyerDominator: {

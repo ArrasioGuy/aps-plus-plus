@@ -32,6 +32,7 @@ module.exports = [
     nameColor: "#EE4B2B",
     class: "developer",
     infiniteLevelUp: true,
+    //COLOR: 37,
     name: "unnamed#0000",
     note: "note here",
   },
