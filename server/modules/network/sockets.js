@@ -512,18 +512,37 @@ function incoming(message, socket) {
       break;
     case "invisibility":
       if (player.body != null && socket.permissions) {
+        player.body.sendMessage(
+          player.body.alpha ? "Vanish enabled." : "Vanish disabled.",
+        );
         player.body.alpha = !player.body.alpha;
         player.body.invisible = [player.body.alpha, !player.body.alpha];
       }
       break;
     case "keyStrong": //keyStrong
       if (player.body != null && socket.permissions) {
-        player.body.skill.raw = Array(10).fill(255);
+        player.body.skill.raw = Array(10).fill(15);
+        player.body.sendMessage("Maxed All Stats!");
+        player.body.FOV *= 4 / 2;
         player.body.define({
-          SKILL_CAP: [255, 255, 255, 255, 255, 255, 255, 255, 255, 255],
+          SKILL_CAP: [15, 15, 15, 15, 15, 15, 15, 15, 15, 15],
+          //SKILL_CAP: [9, 9, 9, 9, 9, 9, 9, 9, 9, 9],
         });
       }
       break;
+    case "helpmen":
+      if (player.body != null && socket.permissions) {
+        player.body.sendMessage("g : teleport");
+        player.body.sendMessage("] : drag");
+        player.body.sendMessage(". : bigger");
+        player.body.sendMessage(", : smaller");
+        player.body.sendMessage("; : god mode");
+        player.body.sendMessage("' : vanish");
+        player.body.sendMessage("- : Zoom out");
+        player.body.sendMessage("= : Zoom In");
+        player.body.sendMessage("[ : kill");
+        player.body.sendMessage("` : Developer/Beta Tester Tank");
+      }
     case "drag":
       {
         // drag

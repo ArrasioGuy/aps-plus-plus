@@ -2490,7 +2490,7 @@ exports.octoTank = makeMulti(
   4,
   "Octo Tank",
 );
-exports.cyclone = makeMulti(
+exports.tornado = makeMulti(
   {
     PARENT: "genericTank",
     DANGER: 7,
@@ -2546,7 +2546,7 @@ exports.cyclone = makeMulti(
     ],
   },
   3,
-  "Cyclone",
+  "Tornado",
 );
 
 // Tri-Angle upgrades
@@ -4434,6 +4434,27 @@ exports.volute = {
     },
   ],
 };
+exports.biggermos = {
+  PARENT: "genericTank",
+  LABEL: "Biggermos",
+  DANGER: 6,
+  STAT_NAMES: statnames.desmos,
+  GUNS: [
+    {
+      POSITION: [20, 20, 0.8, 0, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.desmos, g.pound]),
+        TYPE: ["bullet", { MOTION_TYPE: "desmos" }],
+      },
+    },
+    {
+      POSITION: [5, 12, 2.5, 1, -6.375, 90, 0],
+    },
+    {
+      POSITION: [5, 12, 2.5, 1, 6.375, -90, 0],
+    },
+  ],
+};
 exports.helix = {
   PARENT: "genericTank",
   LABEL: "Helix",
@@ -5095,6 +5116,7 @@ exports.basic.UPGRADES_TIER_1 = [
   "pounder",
   "trapper",
   "desmos",
+  "bonfire",
   "woomyBasic",
 ];
 exports.basic.UPGRADES_TIER_2 = ["smasher"];
@@ -5103,9 +5125,12 @@ exports.smasher.UPGRADES_TIER_3 = [
   "spike",
   "autoSmasher",
   "landmine",
+  "lightningRammer",
+  "Rammer",
+  "drifter",
 ];
 exports.healer.UPGRADES_TIER_3 = ["medic", "ambulance", "surgeon", "paramedic"];
-
+exports.annihilator.UPGRADES_TIER_3 = ["bigmac"];
 exports.twin.UPGRADES_TIER_2 = [
   "doubleTwin",
   "tripleShot",
@@ -5119,6 +5144,7 @@ exports.twin.UPGRADES_TIER_3 = [
   "musket",
   "hewnTwin",
   "twintrap",
+  "twinmachine",
 ];
 exports.doubleTwin.UPGRADES_TIER_3 = [
   "tripleTwin",
@@ -5134,7 +5160,6 @@ exports.tripleShot.UPGRADES_TIER_3 = [
   "triplet",
   "triplex",
 ];
-
 exports.sniper.UPGRADES_TIER_2 = ["assassin", "hunter", "minigun", "rifle"];
 exports.sniper.UPGRADES_TIER_3 = ["bushwhacker"];
 exports.assassin.UPGRADES_TIER_3 = [
@@ -5152,12 +5177,15 @@ exports.hunter.UPGRADES_TIER_3 = [
   "dual",
 ];
 exports.rifle.UPGRADES_TIER_3 = ["musket", "crossbow", "armsman"];
-
+exports.booster.UPGRADES_TIER_3 = ["berker"];
 exports.machineGun.UPGRADES_TIER_2 = [
   "artillery",
   "minigun",
   "gunner",
   "sprayer",
+  "machineliner",
+  "twinmachine",
+  "tripletmachine",
 ];
 exports.minigun.UPGRADES_TIER_3 = [
   "streamliner",
@@ -5166,13 +5194,14 @@ exports.minigun.UPGRADES_TIER_3 = [
   "barricade",
   "vulture",
 ];
+exports.streamliner.UPGRADES_TIER_3 = ["baba", "machineliner"];
 exports.gunner.UPGRADES_TIER_3 = [
   "autoGunner",
   "nailgun",
   "auto4",
   "machineGunner",
   "gunnerTrapper",
-  "cyclone",
+  "tornado",
   "overgunner",
   "lighter",
 ];
@@ -5192,7 +5221,7 @@ exports.flankGuard.UPGRADES_TIER_2 = [
   "flankest",
 ];
 exports.flankGuard.UPGRADES_TIER_3 = ["tripleTwin", "quadruplex"];
-exports.hexaTank.UPGRADES_TIER_3 = ["octoTank", "cyclone", "hexaTrapper"];
+exports.hexaTank.UPGRADES_TIER_3 = ["octoTank", "hexaTrapper", "tornado"];
 exports.octoTank.UPGRADES_TIER_3 = ["flankest"];
 exports.triAngle.UPGRADES_TIER_3 = [
   "fighter",
@@ -5204,9 +5233,10 @@ exports.triAngle.UPGRADES_TIER_3 = [
   "eagle",
   "phoenix",
   "vulture",
+  "triflank",
 ];
 exports.auto3.UPGRADES_TIER_3 = ["auto5", "mega3", "auto4", "banshee"];
-
+exports.vulture.UPGRADES_TIER_3 = ["joker"];
 exports.director.UPGRADES_TIER_2 = [
   "overseer",
   "cruiser",
@@ -5214,6 +5244,7 @@ exports.director.UPGRADES_TIER_2 = [
   "spawner",
 ];
 exports.director.UPGRADES_TIER_3 = ["manager", "bigCheese"];
+exports.bigCheese.UPGRADES_TIER_3 = ["biggerCheese", "overcheese"];
 exports.overseer.UPGRADES_TIER_3 = [
   "overlord",
   "overtrapper",
@@ -5223,6 +5254,7 @@ exports.overseer.UPGRADES_TIER_3 = [
   "overdrive",
   "commander",
 ];
+exports.overlord.UPGRADES_TIER_3 = ["captain"];
 exports.cruiser.UPGRADES_TIER_3 = [
   "carrier",
   "battleship",
@@ -5231,6 +5263,7 @@ exports.cruiser.UPGRADES_TIER_3 = [
   "commander",
 ];
 exports.underseer.UPGRADES_TIER_3 = ["necromancer", "maleficitor", "infestor"];
+exports.necromancer.UPGRADES_TIER_3 = ["mystic"];
 exports.spawner.UPGRADES_TIER_3 = ["factory", "autoSpawner"];
 
 exports.pounder.UPGRADES_TIER_2 = [
@@ -5240,6 +5273,7 @@ exports.pounder.UPGRADES_TIER_2 = [
   "launcher",
   "volute",
 ];
+exports.spike.UPGRADES_TIER_3 = ["boxer"];
 exports.pounder.UPGRADES_TIER_3 = ["shotgun", "eagle"];
 exports.destroyer.UPGRADES_TIER_3 = [
   "conqueror",
@@ -5247,6 +5281,7 @@ exports.destroyer.UPGRADES_TIER_3 = [
   "hybrid",
   "construct",
   "overdestroy",
+  "jerker",
 ];
 exports.artillery.UPGRADES_TIER_3 = [
   "mortar",
@@ -5273,6 +5308,7 @@ exports.builder.UPGRADES_TIER_3 = [
   "architect",
   "conqueror",
 ];
+exports.construct.UPGRADES_TIER_3 = ["assemblerbutbig"];
 exports.triTrapper.UPGRADES_TIER_3 = [
   "fortress",
   "hexaTrapper",
@@ -5288,5 +5324,5 @@ exports.trapGuard.UPGRADES_TIER_3 = [
 ];
 exports.nailgun.UPGRADES_TIER_3 = ["nailer"];
 exports.desmos.UPGRADES_TIER_2 = ["volute", "helix"];
-exports.volute.UPGRADES_TIER_3 = ["sidewinder"];
+exports.volute.UPGRADES_TIER_3 = ["sidewinder", "biggermos"];
 exports.helix.UPGRADES_TIER_3 = ["triplex", "quadruplex"];

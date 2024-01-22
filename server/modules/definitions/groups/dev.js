@@ -41,7 +41,7 @@ exports.menu = {
 exports.developer = {
   PARENT: ["menu"],
   LABEL: "Developer",
-  COLOR: 37,
+  COLOR: 20,
   BODY: {
     SHIELD: 1000,
     REGEN: 10,
@@ -1369,6 +1369,369 @@ exports.whirlwind = {
     return output;
   })(),
 };
+exports.bromycatslipped = {
+  PARENT: "genericTank",
+  LABEL: "Bro my cat slipped",
+  GUNS: [
+    {
+      POSITION: [18, 8, 1, 0, 0, 24.5, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [18, 8, 1, 0, 0, 17, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [18, 8, 1, 0, 0, 10.5, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [18, 8, 1, 0, 0, 2.5, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [18, 8, 1, 0, 0, -14, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [18, 8, 1, 0, 0, -22.5, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [18, 8, 1, 0, 0, -76.5, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [18, 8, 1, 0, 0, -93.5, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [18, 8, 1, 0, 0, -99.5, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [18, 8, 1, 0, 0, -101.5, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [18, 8, 1, 0, 0, -104.5, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [18, 8, 1, 0, 0, -108.5, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [18, 8, 1, 0, 0, -111.5, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [18, 8, 1, 0, 0, -120, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [18, 8, 1, 0, 0, -122, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [18, 8, 1, 0, 0, -122.5, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [18, 8, 1, 0, 0, -125.5, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [18, 8, 1, 0, 0, -127.5, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [18, 8, 1, 0, 0, -137, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [18, 8, 1, 0, 0, -167.5, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [18, 8, 1, 0, 0, 179.5, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [18, 8, 1, 0, 0, 172.5, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [18, 8, 1, 0, 0, 166.5, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [18, 8, 1, 0, 0, 123.5, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [18, 8, 1, 0, 0, 116.5, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [18, 8, 1, 0, 0, 104, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [18, 8, 1, 0, 0, 93, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [18, 8, 1, 0, 0, 80, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [18, 8, 1, 0, 0, 76, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [18, 8, 1, 0, 0, 62.5, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [18, 8, 1, 0, 0, 54, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [18, 8, 1, 0, 0, 49, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [18, 8, 1, 0, 0, 27.5, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [18, 8, 1, 0, 0, 17.5, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [18, 8, 1, 0, 0, -20.5, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [18, 8, 1, 0, 0, -23.5, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [18, 8, 1, 0, 0, -33.5, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [18, 8, 1, 0, 0, -43, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [18, 8, 1, 0, 0, -55.5, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [18, 8, 1, 0, 0, -111, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [18, 8, 1, 0, 0, -118, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [18, 8, 1, 0, 0, -137.5, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [18, 8, 1, 0, 0, -147, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [18, 8, 1, 0, 0, -166, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [18, 8, 1, 0, 0, 176.5, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [18, 8, 1, 0, 0, 159.5, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [18, 8, 1, 0, 0, 144.5, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [18, 8, 1, 0, 0, 123.5, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [18, 8, 1, 0, 0, 96.5, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [18, 8, 1, 0, 0, 84, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [18, 8, 1, 0, 0, 77, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+  ],
+};
 
 exports.developer.UPGRADES_TIER_0 = [
   "tanks",
@@ -1385,6 +1748,9 @@ exports.developer.UPGRADES_TIER_0 = [
   "spectator2",
   "betatanksforfirend",
   "battleshit",
+  "bromycatslipped",
+  "generatorbluead",
+  "youtuber",
 ];
 exports.tanks.UPGRADES_TIER_0 = [
   "basic",

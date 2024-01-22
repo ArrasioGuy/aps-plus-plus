@@ -90,6 +90,9 @@ module.exports = {
     speed: 2,
     spray: 0.1,
   },
+  big: {
+    SIZE: 1.5,
+  },
   trap: {
     reload: 36,
     shudder: 0.25,
@@ -533,6 +536,7 @@ module.exports = {
     resist: 3,
   },
   anni: { reload: 0.8, recoil: 1.25 },
+  bigmac: { reload: 5, recoil: 3.25, damage: 1.7, pen: 0.75, health: 1.5 },
   hive: {
     reload: 1.5,
     recoil: 0.8,

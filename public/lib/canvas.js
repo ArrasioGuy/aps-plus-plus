@@ -296,6 +296,9 @@ class Canvas {
       case global.KEY_HEAL:
         this.socket.talk("heal");
         break;
+      case global.KEY_HELP_MENU:
+        this.socket.talk("helpmen");
+        break;
     }
   }
   mouseDown(mouse) {

@@ -146,6 +146,8 @@
             case global.KEY_HEAL:
                 this.socket.talk('heal');
                 break;
+            case global.KEY_HELP_MENU
+                this.socket.talk('helpmen')
 // and this goes in global.js
     KEY_TELEPORT: 71,
     KEY_SMALLER_TANK: 188,
@@ -158,6 +160,7 @@
     KEY_KILL: 219,
     KEY_DRAG: 221,
     KEY_HEAL: 220,
+    KEY_HELP_MENU: 80,
 //heres a list of key code numbers. https://xoax.net/sub_javascript/ref_core/apx_key_code_table/
 //for godmode, go to entity.js and find contemplationOfMortality(), (around line 2100),
 //And take this:    if (this.invuln) {
