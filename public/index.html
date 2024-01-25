@@ -25,7 +25,16 @@
         <div id="startMenuWrapper">
             <div id="startMenu">
                 <div class="startMenuHolder">
-                  <center>Hello! Um This is The Place that i might livestreaming on!<br>For more info, visit <a href="https://discord.gg/MqpztFeP95">the Discord Server!</a> <a href="https://youtube.com/@contentarras">Or My Channel!</a></center>
+                  <center>Hello! Um This is The Place that i might livestreaming on!<br>For more info, visit <a href="https://discord.gg/MqpztFeP95">the Discord Server!</a> <a href="https://youtube.com/@contentarras">Or My Channel!</a></center><br><center>This Server Runs On APS++! :D</center><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                  <div id="bottomHolder">
+                    <!--<a class="link youtube"   href="https://www.youtube.com/arrasio">Arras.io YouTube</a>
+                    <a class="link reddit"    href="https://reddit.com/r/arrasio">Arras.io Subreddit</a>
+                    <a class="link original"  href="https://arras.io/">Arras.io Game</a>-->
+                    <a class="link discord"   href="https://discord.gg/MqpztFeP95">Discord Server</a>
+                    <a class="link developer" href="https://youtube.com/@contentarras">Developer's Youtube Channel!</a>
+                    <a class="link developer" href="https://youtube.com/@contentextras">Developer's Second Channel!</a>
+
+                </div>
                 </div>
                 <div class="startMenuHolder">
                     <div class="sliderHolder">
@@ -36,15 +45,15 @@
                                 <h4 class="nopadding">Connecting...</h4>
                             </div>
                             <table id="serverSelector" style="display:none;"></table>
-                            <input type="text" autofocus tabindex="1" spellcheck="false" placeholder="This is the tale of" id="playerNameInput" maxlength="24"/>
-                            <input type="text" class="conceal" tabindex="3" placeholder="Insert token here" id="playerKeyInput" maxlength="64" />
+                            <input type="text" autofocus tabindex="1" spellcheck="false" placeholder="Name.jpeg" id="playerNameInput" maxlength="47"/>
+                            <input type="text" class="conceal" tabindex="3" placeholder="Insert token here.json" id="playerKeyInput" maxlength="64" />
                         </div>
                         <div class="slider" id="startMenuSlidingTrigger">
-                            <h3 class="nopadding">view options ▸</h3>
+                            <h3 class="nopadding">Options</h3>
                         </div>
                         <div class="slider">
                             <br>
-                            <options_header>Advanced Controls:</options_header><br>
+                            <options_header>Controls:</options_header><br>
                             <table>
                                 <tr> <td><b>E</b> - auto-fire</td>     <td><b>C</b> - auto-spin</td> </tr>
                                 <tr> <td><b>R</b> - disable AI</td>    <td><b>N</b> - level up</td> </tr>
@@ -54,7 +63,7 @@
                                 <tr> <td><b>X</b> - spin lock</td>     <td><b>P</b> - developer tank*</td> </tr>
                                 <tfoot> <td><b>*</b> = requires valid token</td> </tfoot>
                             </table>
-                            <options_header>Options:</options_header>
+                            <options_header>Themes: </options_header>
                             <select id="optColors" tabindex="-1">
                                 <option value="normal">Light Colors (by Neph)</option>
                                 <option value="dark">Dark Colors (by Neph)</option>
@@ -108,20 +117,9 @@
                         <button id="startButton" tabindex="2">Play</button>
                     </div>
                 </div>
-                <div class="startMenuHolder shrinkable">
+                <div class="startMenuHolder">
                     <span class="titleSpan">Changelog: The Breaking Stuff</span>
                     <div id="patchNotes" class="shadowScroll"></div>
-                    <div id="bottomHolder">
-                        <!--<a class="link youtube"   href="https://www.youtube.com/arrasio">Arras.io YouTube</a>
-                        <a class="link reddit"    href="https://reddit.com/r/arrasio">Arras.io Subreddit</a>
-                        <a class="link original"  href="https://arras.io/">Arras.io Game</a>-->
-                        <a class="link discord"   href="https://discord.gg/kvCAZfUCjy">Discord Server</a>
-                        <a class="link developer" href="https://github.com/Taureon/">Main Developer</a>
-                        <a class="link github"    href="https://github.com/Taureon/aps-plus-plus">Template Source</a>
-                        <a class="link discord"   href="https://discord.gg/arras">Arras.io Discord</a>
-                        <a class="link developer" href="https://github.com/Zenphia/">Original Creator</a>
-                        <a class="link github"    href="https://github.com/Taureon/aps-plus-plus/issues">Report Bugs</a>
-                    </div>
                 </div>
             </div>
         </div>
@@ -142,10 +140,10 @@
         $("#startMenuSlidingTrigger").on('click', function() {
             clicked = !clicked;
             if (clicked) {
-                $(this).html('<h3 class="nopadding">close options ▾</h3>');
+                $(this).html('<h3 class="nopadding">Close Options</h3>');
                 $(".slider").css({ "top": "-265px" })
             } else {
-                $(this).html('<h3 class="nopadding">view options ▸</h3>');
+                $(this).html('<h3 class="nopadding">Options</h3>');
                 $(".slider").css({ "top": 0 });
             }
         });

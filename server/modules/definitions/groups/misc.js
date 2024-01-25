@@ -4029,6 +4029,55 @@ exports.prelatorMachine = {
     },
   ],
 };
+exports.metalmach = {
+  PARENT: ["elite"],
+  LABEL: "Metal Machine",
+  SHAPE: 4,
+  GUNS: [
+    {
+      POSITION: [13, 13, 1, 0, 0, 180, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.block]),
+        TYPE: "pillbox",
+      },
+    },
+    {
+      POSITION: [6, 9, -1.5, 13, 0, 180, 0],
+    },
+    {
+      POSITION: [12, 7.5, 1, 0, -3, 0, 0.25],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.twin]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [12, 7.5, 1, 0, 3, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.twin]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [11, 8, -1.3, 0, 0, -90, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.factory, g.drone]),
+        TYPE: "minion",
+        AUTO_FIRE: true,
+        MAX_CHILDREN: 2,
+      },
+    },
+    {
+      POSITION: [11, 8, -1.3, 0, 0, 90, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.factory, g.drone]),
+        TYPE: "minion",
+        AUTO_FIRE: true,
+        MAX_CHILDREN: 2,
+      },
+    },
+  ],
+};
 
 exports.pastdaily.UPGRADES_TIER_0 = [
   "twinFlamethrower",
@@ -4040,7 +4089,7 @@ exports.pastdaily.UPGRADES_TIER_0 = [
   "ninja",
 ];
 exports.ninja.UPGRADES_TIER_3 = ["tier1", "tier2", "tier3"];
-exports.arrasdev.UPGRADES_TIER_0 = ["spectator2"];
+exports.arrasdev.UPGRADES_TIER_0 = ["spectator2", "defender", "guardian"];
 exports.betatanksforfirend.UPGRADES_TIER_0 = [
   "twinFlamethrower",
   "flamethrower",
@@ -4062,6 +4111,7 @@ exports.customsiegestuff.UPGRADES_TIER_0 = [
   "DiepCloser",
   "healer",
   "bob",
+  "metalmach",
 ];
 exports.betateanks.UPGRADES_TIER_0 = [
   //"florr_tank",
