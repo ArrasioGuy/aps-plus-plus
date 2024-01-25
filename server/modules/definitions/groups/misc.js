@@ -3960,16 +3960,70 @@ exports.tripletmachine = {
       },
     },
     {
-      POSITION: [18, 7, 1.45, 0, -6, 0, 0],
+      POSITION: [18, 7, 1.45, 0, -6, 0, 0.75],
       PROPERTIES: {
         SHOOT_SETTINGS: combineStats([g.basic, g.mach]),
         TYPE: "bullet",
       },
     },
     {
-      POSITION: [20, 7, 1.45, 0, 0, 0, 0],
+      POSITION: [20, 7, 1.45, 0, 0, 0, 0.25],
       PROPERTIES: {
         SHOOT_SETTINGS: combineStats([g.basic, g.mach]),
+        TYPE: "bullet",
+      },
+    },
+  ],
+};
+exports.flankMachine = {
+  PARENT: "genericTank",
+  LABEL: "Flank Machine",
+  GUNS: [
+    {
+      POSITION: [20, 8, 1.7, 0, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.mach]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [20, 8, 1.7, 0, 0, 112.5, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.mach]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [20, 8, 1.7, 0, 0, -120, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.mach]),
+        TYPE: "bullet",
+      },
+    },
+  ],
+};
+exports.prelatorMachine = {
+  PARENT: ["genericTank"],
+  LABEL: "Prelator Machine",
+  GUNS: [
+    {
+      POSITION: [18, 8, 2, 0, 0, 1, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.hunter]),
+        TYPE: "hypermissile",
+      },
+    },
+    {
+      POSITION: [18, 11, 2, -4, 0, 0.5, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.hunter]),
+        TYPE: "hypermissile",
+      },
+    },
+    {
+      POSITION: [18, 11, 1.8, -8, 0, 1, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.mini]),
         TYPE: "bullet",
       },
     },

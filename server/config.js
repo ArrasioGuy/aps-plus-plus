@@ -55,7 +55,7 @@ module.exports = {
   WELCOME_MESSAGE:
     "You have spawned! Welcome to the game.\n" +
     "You will be invulnerable until you move or shoot.\n" +
-    "Please report any bugs you encounter!",
+    "Hello! Content Here! Join My Discord Server! .gg/MqpztFeP95",
 
   // Physics
 
@@ -99,7 +99,7 @@ module.exports = {
   // Max level you get by level-up key and auto-level-up.
   LEVEL_CHEAT_CAP: 45,
 
-  // Amount of player-bots to spawn.
+  // Amount of playear-bots to spawn.
   BOTS: 0,
 
   // How much XP player-bots get per second until they reach LEVEL_CAP.

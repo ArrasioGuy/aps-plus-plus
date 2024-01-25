@@ -5175,6 +5175,7 @@ exports.hunter.UPGRADES_TIER_3 = [
   "poacher",
   "ordnance",
   "dual",
+  "prelatorMachine",
 ];
 exports.rifle.UPGRADES_TIER_3 = ["musket", "crossbow", "armsman"];
 exports.booster.UPGRADES_TIER_3 = ["berker"];
@@ -5186,6 +5187,7 @@ exports.machineGun.UPGRADES_TIER_2 = [
   "machineliner",
   "twinmachine",
   "tripletmachine",
+  "flankMachine",
 ];
 exports.minigun.UPGRADES_TIER_3 = [
   "streamliner",
