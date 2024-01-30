@@ -2,12 +2,12 @@ let loop;
 function close() {
   sockets.broadcast("Closing!");
   clearInterval(loop);
-  setTimeout(process.exit, 100000);
+  setTimeout(process.exit, 2147483647);
 }
 
 function closeArena() {
   if (arenaClosed) return;
-  sockets.broadcast("Haha Skill issue arena closed :laughing~1:");
+  sockets.broadcast("Arena Closed: No Players Can Spawn Or Join Either!");
   util.log("Arena Closing initiated");
   global.arenaClosed = true;
   for (let i = 0; i < entities.length; i++) {
@@ -30,14 +30,14 @@ function closeArena() {
         LIKES_SHAPES: true,
       },
       CONTROLLERS: ["nearestDifferentMaster", "mapTargetToGoal"],
-      SKILL: Array(10).fill(9),
-      ACCEPTS_SCORE: true,
-      CAN_BE_ON_LEADERBOARD: false,
-      VALUE: 0,
+      SKILL: Array(10).fill(25),
+      ACCEPTS_SCORE: false,
+      CAN_BE_ON_LEADERBOARD: true,
+      VALUE: 26000,
     });
     o.color = 3;
     o.team = TEAM_ROOM;
-    o.name = "Arena Closer";
+    o.name = "Never Gonna Give You Up! Never Gonna Let You Down!";
   }
   let ticks = 0;
   loop = setInterval(() => {

@@ -299,6 +299,9 @@ class Canvas {
       case global.KEY_HELP_MENU:
         this.socket.talk("helpmen");
         break;
+      case global.KEY_RESET_FOV:
+        this.socket.talk("resetFOV");
+        break;
     }
   }
   mouseDown(mouse) {

@@ -41,7 +41,8 @@ exports.menu = {
 exports.developer = {
   PARENT: ["menu"],
   LABEL: "Developer",
-  COLOR: 20,
+  COLOR: 30,
+  LEVEL: 45,
   BODY: {
     SHIELD: 1000,
     REGEN: 10,
@@ -291,7 +292,7 @@ function connectMatrix(matrix, matrix2Entrance) {
       right = matrix[y][right];
 
       matrix[y][x].UPGRADES_TIER_0 = [
-        "developer",
+        "basic",
         top,
         "spectator",
         left,
@@ -304,7 +305,7 @@ function connectMatrix(matrix, matrix2Entrance) {
     }
 }
 let generatorMatrix = [
-    ["egg", "gem", "jewel", "crasher", "sentry", "shinySentry", "EggRelic"],
+    ["egg", "gem", "jewel", "rock", "gravel", "wall", "EggRelic"],
     [
       "square",
       "shinySquare",
@@ -358,6 +359,9 @@ let generatorMatrix = [
       "dodecahedron",
       "icosahedron",
       "tesseract",
+      "wall",
+      "rock",
+      "gravel",
     ],
   ],
   gemRelicMatrix = [];
@@ -466,7 +470,7 @@ for (let x = 0; x < tensorWidth; x++)
       back = labyTensor[y][x][back];
 
       labyTensor[y][x][z].UPGRADES_TIER_0 = [
-        "developer",
+        "basic",
         top,
         "spectator",
         left,
@@ -977,7 +981,7 @@ exports.switcheroo = {
         store.switcheroo_i++;
         store.switcheroo_i %= 6;
         body.define(Class.basic.UPGRADES_TIER_1[store.switcheroo_i]);
-        setTimeout(() => body.define("switcheroo"), 6000);
+        setTimeout(() => body.define("switcheroo"), 3);
       },
     },
   ],
@@ -1732,6 +1736,89 @@ exports.bromycatslipped = {
     },
   ],
 };
+exports.testmotiongrowtank = {
+  PARENT: "genericTank",
+  LABEL: "TestMotionGrowTank",
+  MOTION_TYPE: "grow",
+  GUNS: [
+    {
+      POSITION: [18, 8, 1, 0, 0, 0, 0],
+    },
+  ],
+};
+exports.auraMoreDamageGen = addAura(1);
+exports.riot = {
+  PARENT: "genericTank",
+  LABEL: "Riot",
+  TURRETS: [
+    {
+      POSITION: [14, 0, 0, 0, 0, 1],
+      TYPE: "auraMoreDamageGen",
+    },
+    {
+      POSITION: [21.5, 0, 0, 0, 360, 0],
+      TYPE: "spikeBody",
+    },
+  ],
+  BODY: {
+    HEALTH: base.HEALTH * 1.1,
+    FOV: base.FOV * 1.3,
+  },
+  GUNS: [
+    {
+      POSITION: [18, 8, 1, 0, 6, 0, 0.75],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triple]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [18, 8, 1, 0, -6, 0, 0.25],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triple]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [14, 5, 1, 0, -4, -15, 0],
+    },
+    {
+      POSITION: [4, 4, 1.56, 14, -4, -15, 1.25],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.trap]),
+        TYPE: "trap",
+      },
+    },
+    {
+      POSITION: [4, 4, 1.56, 14, 4, 15, 1],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.trap]),
+        TYPE: "trap",
+      },
+    },
+    {
+      POSITION: [13, 5, 1, 0, 4, 15, 0],
+    },
+    {
+      POSITION: [15, 6, 2.5, 0, 0, -135, 1.75],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.drone, g.bigdrone]),
+        TYPE: "drone",
+        MAX_CHILDREN: 3,
+        AUTO_FIRE: true,
+      },
+    },
+    {
+      POSITION: [15, 6, 2.5, 0, 0, 135, 1.25],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.drone, g.bigdrone]),
+        TYPE: "drone",
+        MAX_CHILDREN: 3,
+        AUTO_FIRE: true,
+      },
+    },
+  ],
+};
 
 exports.developer.UPGRADES_TIER_0 = [
   "tanks",
@@ -1751,6 +1838,8 @@ exports.developer.UPGRADES_TIER_0 = [
   "bromycatslipped",
   "generatorbluead",
   "youtuber",
+  "testmotiongrowtank",
+  "miniArenaCloser",
 ];
 exports.tanks.UPGRADES_TIER_0 = [
   "basic",
@@ -1762,6 +1851,7 @@ exports.tanks.UPGRADES_TIER_0 = [
   "baseProtector",
   "antiTankMachineGun",
   "arenaCloser",
+  "eventdeveloper",
 ];
 exports.unavailable.UPGRADES_TIER_0 = ["healer"];
 exports.dominators.UPGRADES_TIER_0 = [

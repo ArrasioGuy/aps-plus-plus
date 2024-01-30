@@ -79,6 +79,7 @@ const global = {
   KEY_HEAL: 220,
   KEY_STEAL: 81,
   KEY_HELP_MENU: 75,
+  KEY_RESET_FOV: 8,
   // end();
   KEY_AUTO_SPIN: 67,
   KEY_AUTO_FIRE: 69,

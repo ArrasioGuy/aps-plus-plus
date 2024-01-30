@@ -554,11 +554,21 @@ module.exports = {
     density: 1.5,
   },
   rapture: {
-    speed: 1.25,
-    maxSpeed: 1.75,
+    speed: 2,
+    maxSpeed: 2.75,
     damage: 1,
     pen: 0.25,
     health: 1,
+  },
+  redistibutor: {
+    reload: 20,
+    recoil: 25,
+    size: 0.75,
+    health: 3.75,
+    damage: 2.75,
+    pen: 2.85,
+    speed: 3,
+    maxSpeed: 4.25,
   },
   mortar: { reload: 1.2, health: 1.1, speed: 0.8, maxSpeed: 0.8 },
   destroyerDominator: {
@@ -571,6 +581,9 @@ module.exports = {
     speed: 0.575,
     maxSpeed: 0.475,
     spray: 0.5,
+  },
+  fastermachineshot: {
+    reload: 0.0075,
   },
   shotgun: {
     reload: 8,

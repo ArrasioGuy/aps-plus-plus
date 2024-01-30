@@ -2131,6 +2131,7 @@ exports.tripilet = {
 exports.testbedformods = {
   PARENT: "menu",
   COLOR: 1,
+  STROKE_WIDTH: 0.5,
   LABEL: "Game Moderator Menu",
 };
 
@@ -2252,7 +2253,6 @@ exports.rapturev2 = {
 
 exports.misclite = {
   PARENT: "menu",
-  COLOR: 3,
   LABEL: "Miscellaneous Tanks (Lite)",
 };
 
@@ -2268,18 +2268,15 @@ exports.betatester = {
 exports.removedtanks = {
   PARENT: "menu",
   LABEL: "Removed Tanks Menu",
-  COLOR: 9,
 };
 exports.unreleasedtanks = {
   PARENT: "menu",
   LABEL: "Unreleased Tanks Menu",
-  COLOR: 36,
 };
 
 exports.ceptioniststanks = {
   PARENT: "menu",
   LABEL: "Ceptionists Menu",
-  COLOR: 5,
 };
 exports.swarmist = {
   PARENT: ["miniboss"],
@@ -2437,13 +2434,17 @@ exports.customsiegestuff = {
   LABEL: "Custom Siege Entity's/Bosses",
   COLOR: 33,
 };
-exports.dailytank = {
-  PARENT: ["genericTank"],
-  LABEL: "Daily Tank      ",
-};
 exports.page2ofbts = {
   PARENT: ["menu"],
   LABEL: "Page 2",
+};
+exports.page3ofbts = {
+  PARENT: ["menu"],
+  LABEL: "Page 3",
+};
+exports.OPTanks = {
+  PARENT: ["menu"],
+  LABEL: "OP Tanks",
 };
 exports.nexusmenu = {
   PARENT: ["menu"],
@@ -3468,49 +3469,49 @@ exports.vulstreamliner = {
       },
     },
     {
-      POSITION: [24, 8, 1.1, 0, 0, 0, 2],
+      POSITION: [24, 8, 1.1, 0, 0, 0, 6],
       PROPERTIES: {
         SHOOT_SETTINGS: combineStats([g.basic, g.tri, g.trifront]),
         TYPE: "bullet",
       },
     },
     {
-      POSITION: [22, 8, 1.1, 0, 0, 0, 1.75],
+      POSITION: [22, 8, 1.1, 0, 0, 0, 5],
       PROPERTIES: {
         SHOOT_SETTINGS: combineStats([g.basic, g.tri, g.trifront]),
         TYPE: "bullet",
       },
     },
     {
-      POSITION: [20, 8, 1.1, 0, 0, 0, 1.5],
+      POSITION: [20, 8, 1.1, 0, 0, 0, 4],
       PROPERTIES: {
         SHOOT_SETTINGS: combineStats([g.basic, g.tri, g.trifront]),
         TYPE: "bullet",
       },
     },
     {
-      POSITION: [18, 8, 1.1, 0, 0, 0, 1.25],
+      POSITION: [18, 8, 1.1, 0, 0, 0, 3],
       PROPERTIES: {
         SHOOT_SETTINGS: combineStats([g.basic, g.tri, g.trifront]),
         TYPE: "bullet",
       },
     },
     {
-      POSITION: [16, 8, 1.1, 0, 0, 0, 1],
+      POSITION: [16, 8, 1.1, 0, 0, 0, 2],
       PROPERTIES: {
         SHOOT_SETTINGS: combineStats([g.basic, g.tri, g.trifront]),
         TYPE: "bullet",
       },
     },
     {
-      POSITION: [14, 8, 1.1, 0, 0, 0, 0.75],
+      POSITION: [14, 8, 1.1, 0, 0, 0, 1],
       PROPERTIES: {
         SHOOT_SETTINGS: combineStats([g.basic, g.tri, g.trifront]),
         TYPE: "bullet",
       },
     },
     {
-      POSITION: [12, 8, 1.1, 0, 0, 0, 0.25],
+      POSITION: [12, 8, 1.1, 0, 0, 0, 0.5],
       PROPERTIES: {
         SHOOT_SETTINGS: combineStats([g.basic, g.tri, g.trifront]),
         TYPE: "bullet",
@@ -4030,8 +4031,27 @@ exports.prelatorMachine = {
   ],
 };
 exports.metalmach = {
-  PARENT: ["elite"],
+  PARENT: ["genericTank"],
   LABEL: "Metal Machine",
+  COLOR: "yellow",
+  UPGRADE_COLOR: "yellow",
+  CONTROLLERS: ["nearestDifferentMaster", "canRepel"],
+  HITS_OWN_TYPE: "hardOnlyBosses",
+  SKILL: skillSet({
+    rld: 1,
+    dam: 0.5,
+    pen: 0.9,
+    str: 0.9,
+    spd: 0.4,
+    atk: 0.4,
+    hlt: 1,
+    shi: 0.7,
+    rgn: 0.7,
+    mob: 0.9,
+  }),
+  SIZE: 35,
+  LEVEL: 55,
+  BROADCAST_MESSAGE: "A Metal Machine Died! Rip... :(",
   SHAPE: 4,
   GUNS: [
     {
@@ -4039,6 +4059,7 @@ exports.metalmach = {
       PROPERTIES: {
         SHOOT_SETTINGS: combineStats([g.basic, g.block]),
         TYPE: "pillbox",
+        MAX_CHILDREN: 3,
       },
     },
     {
@@ -4052,7 +4073,7 @@ exports.metalmach = {
       },
     },
     {
-      POSITION: [12, 7.5, 1, 0, 3, 0, 0],
+      POSITION: [12, 7.5, 1, 0, 3, 0, 0.75],
       PROPERTIES: {
         SHOOT_SETTINGS: combineStats([g.basic, g.twin]),
         TYPE: "bullet",
@@ -4078,6 +4099,708 @@ exports.metalmach = {
     },
   ],
 };
+exports.spiniBoi = {
+  PARENT: "genericTank",
+  LABEL: "Spini boi",
+  COLOR: 0,
+  SHAPE: 7,
+  GUNS: [
+    {
+      POSITION: [12, 9, 1, 0, 0, -22.5, 2],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [12, 9, 1, 0, 0, 22.5, 1.75],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [12, 9, 1, 0, 0, 75, 1.25],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [12, 9, 1, 0, 0, 127.5, 1],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [12, 9, 1, 0, 0, -180, 0.75],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [12, 9, 1, 0, 0, -75, 0.25],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [12, 9, 1, 0, 0, -127.5, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+  ],
+};
+exports.eventdeveloper = {
+  PARENT: ["menu"],
+  LABEL: "Event Developer",
+  RESET_CHILDREN: true,
+  ACCEPTS_SCORE: true,
+  LEVEL: 45,
+  CAN_BE_ON_LEADERBOARD: true,
+  DRAW_HEALTH: true,
+  ARENA_CLOSER: false,
+  INVISIBLE: [0, 0],
+  ALPHA: [0, 1],
+  HITS_OWN_TYPE: "hardOnlyTanks",
+  SHAPE: [
+    [-1, -0.8],
+    [-0.8, -1],
+    [0.8, -1],
+    [1, -0.8],
+    [0.2, 0],
+    [1, 0.8],
+    [0.8, 1],
+    [-0.8, 1],
+    [-1, 0.8],
+  ],
+  GUNS: [
+    {
+      /*** LENGTH WIDTH     ASPECT        X             Y         ANGLE     DELAY */
+      POSITION: [18, 10, -1.4, 0, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "developerBullet",
+      },
+    },
+  ],
+};
+exports.eventdev2misc = {
+  PARENT: ["eventdeveloper"],
+  LABEL: "Miscellaneous (Lite) Event!",
+  UPGRADE_TOOLTIP: "op upgrades removed laughing lol",
+};
+exports.eventdev3betatank = {
+  PARENT: ["eventdeveloper"],
+  LABEL: "Beta Tanks (Event)",
+  UPGRADE_TOOLTIP: "op upgrades removed laughing lol",
+};
+exports.eventdev4page2bts = {
+  PARENT: ["eventdeveloper"],
+  LABEL: "Page 2",
+  UPGRADE_TOOLTIP: "op upgrades removed laughing lol",
+};
+exports.todaysdailytank = {
+  PARENT: ["menu"],
+  LABEL: "Today's Daily Tank Bois!",
+  UPGRADE_COLOR: "rainbow",
+  COLOR: "rainbow",
+};
+exports.boat = {
+  PARENT: ["genericTank"],
+  LABEL: "Boat",
+  GUNS: [
+    {
+      POSITION: [18, 8, -2, 0, 0, -178.5, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bee",
+      },
+    },
+    {
+      POSITION: [18, 8, -2, 0, 0, 1, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bee",
+      },
+    },
+    {
+      POSITION: [18, 8, -2, 0, 0, 90.5, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bee",
+      },
+    },
+    {
+      POSITION: [18, 8, -2, 0, 0, -89.5, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bee",
+      },
+    },
+  ],
+};
+exports.oldtank = {
+  PARENT: ["menu"],
+  LABEL: "Old Tanks",
+  COLOR: 32,
+};
+exports.newbranch = {
+  PARENT: ["genericTank"],
+  LABEL: "Dir-Basic",
+  DANGER: 6,
+  STAT_NAMES: statnames.drone,
+  BODY: {
+    ACCELERATION: base.ACCEL * 0.75,
+    SPEED: base.SPEED * 0.9,
+    FOV: base.FOV * 1.1,
+  },
+  MAX_CHILDREN: 5,
+  GUNS: [
+    {
+      /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+      POSITION: [6, 12, 1.2, 8, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.drone, g.over]),
+        TYPE: "drone",
+        AUTOFIRE: true,
+        SYNCS_SKILLS: true,
+        STAT_CALCULATOR: gunCalcNames.drone,
+        WAIT_TO_CYCLE: true,
+      },
+    },
+    {
+      POSITION: [10, 6, 0, 8, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+        SYNCS_SKILLS: true,
+        STAT_CALCULATOR: gunCalcNames.drone,
+      },
+    },
+  ],
+};
+exports.newbranch2 = {
+  PARENT: ["genericTank"],
+  LABEL: "Over-Basic",
+  DANGER: 6,
+  STAT_NAMES: statnames.drone,
+  BODY: {
+    ACCELERATION: base.ACCEL * 0.75,
+    SPEED: base.SPEED * 0.9,
+    FOV: base.FOV * 1.1,
+  },
+  MAX_CHILDREN: 10,
+  GUNS: [
+    {
+      /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+      POSITION: [6, 12, 1.2, 8, 0, 90, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.drone, g.over]),
+        TYPE: "drone",
+        AUTOFIRE: true,
+        SYNCS_SKILLS: true,
+        STAT_CALCULATOR: gunCalcNames.drone,
+        WAIT_TO_CYCLE: true,
+      },
+    },
+    {
+      /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+      POSITION: [6, 12, 1.2, 8, 0, -90, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.drone, g.over]),
+        TYPE: "drone",
+        AUTOFIRE: true,
+        SYNCS_SKILLS: true,
+        STAT_CALCULATOR: gunCalcNames.drone,
+        WAIT_TO_CYCLE: true,
+      },
+    },
+    {
+      POSITION: [10, 6, 0, 8, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+        SYNCS_SKILLS: true,
+        STAT_CALCULATOR: gunCalcNames.drone,
+      },
+    },
+  ],
+};
+exports.newbranch3 = {
+  PARENT: ["genericTank"],
+  LABEL: "Over-Basic",
+  DANGER: 6,
+  STAT_NAMES: statnames.drone,
+  BODY: {
+    ACCELERATION: base.ACCEL * 0.75,
+    SPEED: base.SPEED * 0.9,
+    FOV: base.FOV * 1.1,
+  },
+  MAX_CHILDREN: 12,
+  GUNS: [
+    {
+      /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+      POSITION: [6, 12, 1.2, 8, 0, 90, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.drone, g.over]),
+        TYPE: "drone",
+        AUTOFIRE: true,
+        SYNCS_SKILLS: true,
+        STAT_CALCULATOR: gunCalcNames.drone,
+        WAIT_TO_CYCLE: true,
+      },
+    },
+    {
+      /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+      POSITION: [6, 12, 1.2, 8, 0, -90, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.drone, g.over]),
+        TYPE: "drone",
+        AUTOFIRE: true,
+        SYNCS_SKILLS: true,
+        STAT_CALCULATOR: gunCalcNames.drone,
+        WAIT_TO_CYCLE: true,
+      },
+    },
+    {
+      /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+      POSITION: [6, 12, 1.2, 8, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.drone, g.over]),
+        TYPE: "drone",
+        AUTOFIRE: true,
+        SYNCS_SKILLS: true,
+        STAT_CALCULATOR: gunCalcNames.drone,
+        WAIT_TO_CYCLE: true,
+      },
+    },
+    {
+      /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+      POSITION: [6, 12, 1.2, 8, 0, 180, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.drone, g.over]),
+        TYPE: "drone",
+        AUTOFIRE: true,
+        SYNCS_SKILLS: true,
+        STAT_CALCULATOR: gunCalcNames.drone,
+        WAIT_TO_CYCLE: true,
+      },
+    },
+    {
+      POSITION: [10, 6, 0, 8, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: exports.bullet,
+        SYNCS_SKILLS: true,
+        STAT_CALCULATOR: gunCalcNames.drone,
+      },
+    },
+  ],
+};
+exports.trappers = {
+  PARENT: ["genericTank"],
+  LABEL: "Dir-Trapper",
+  DANGER: 6,
+  STAT_NAMES: statnames.drone,
+  BODY: {
+    ACCELERATION: base.ACCEL * 0.75,
+    SPEED: base.SPEED * 0.9,
+    FOV: base.FOV * 1.1,
+  },
+  MAX_CHILDREN: 8,
+  GUNS: [
+    {
+      /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+      POSITION: [6, 12, 1.2, 8, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.drone, g.over]),
+        TYPE: "drone",
+        AUTOFIRE: true,
+        SYNCS_SKILLS: true,
+        STAT_CALCULATOR: gunCalcNames.drone,
+        WAIT_TO_CYCLE: true,
+      },
+    },
+    {
+      POSITION: [10, 6, 0, 8, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "trap",
+        SYNCS_SKILLS: true,
+        STAT_CALCULATOR: gunCalcNames.drone,
+      },
+    },
+  ],
+};
+exports.trapper2 = {
+  PARENT: ["genericTank"],
+  LABEL: "Over-Trapper",
+  DANGER: 6,
+  STAT_NAMES: statnames.drone,
+  BODY: {
+    ACCELERATION: base.ACCEL * 0.75,
+    SPEED: base.SPEED * 0.9,
+    FOV: base.FOV * 1.1,
+  },
+  MAX_CHILDREN: 13,
+  GUNS: [
+    {
+      /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+      POSITION: [6, 12, 1.2, 8, 0, 90, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.drone, g.over]),
+        TYPE: "drone",
+        AUTOFIRE: true,
+        SYNCS_SKILLS: true,
+        STAT_CALCULATOR: gunCalcNames.drone,
+        WAIT_TO_CYCLE: true,
+      },
+    },
+    {
+      /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+      POSITION: [6, 12, 1.2, 8, 0, -90, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.drone, g.over]),
+        TYPE: "drone",
+        AUTOFIRE: true,
+        SYNCS_SKILLS: true,
+        STAT_CALCULATOR: gunCalcNames.drone,
+        WAIT_TO_CYCLE: true,
+      },
+    },
+    {
+      POSITION: [10, 6, 0, 8, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "trap",
+        SYNCS_SKILLS: true,
+        STAT_CALCULATOR: gunCalcNames.drone,
+      },
+    },
+  ],
+};
+exports.trapper3 = {
+  PARENT: ["genericTank"],
+  LABEL: "Over-Trapper",
+  DANGER: 6,
+  STAT_NAMES: statnames.drone,
+  BODY: {
+    ACCELERATION: base.ACCEL * 0.75,
+    SPEED: base.SPEED * 0.9,
+    FOV: base.FOV * 1.1,
+  },
+  MAX_CHILDREN: 15,
+  GUNS: [
+    {
+      /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+      POSITION: [6, 12, 1.2, 8, 0, 90, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.drone, g.over]),
+        TYPE: "drone",
+        AUTOFIRE: true,
+        SYNCS_SKILLS: true,
+        STAT_CALCULATOR: gunCalcNames.drone,
+        WAIT_TO_CYCLE: true,
+      },
+    },
+    {
+      /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+      POSITION: [6, 12, 1.2, 8, 0, -90, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.drone, g.over]),
+        TYPE: "drone",
+        AUTOFIRE: true,
+        SYNCS_SKILLS: true,
+        STAT_CALCULATOR: gunCalcNames.drone,
+        WAIT_TO_CYCLE: true,
+      },
+    },
+    {
+      /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+      POSITION: [6, 12, 1.2, 8, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.drone, g.over]),
+        TYPE: "drone",
+        AUTOFIRE: true,
+        SYNCS_SKILLS: true,
+        STAT_CALCULATOR: gunCalcNames.drone,
+        WAIT_TO_CYCLE: true,
+      },
+    },
+    {
+      /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+      POSITION: [6, 12, 1.2, 8, 0, 180, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.drone, g.over]),
+        TYPE: "drone",
+        AUTOFIRE: true,
+        SYNCS_SKILLS: true,
+        STAT_CALCULATOR: gunCalcNames.drone,
+        WAIT_TO_CYCLE: true,
+      },
+    },
+    {
+      POSITION: [10, 6, 0, 8, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "trap",
+        SYNCS_SKILLS: true,
+        STAT_CALCULATOR: gunCalcNames.drone,
+      },
+    },
+  ],
+};
+exports.enginner1 = {
+  PARENT: ["genericTank"],
+  LABEL: "EnginDirector",
+  DANGER: 6,
+  STAT_NAMES: statnames.drone,
+  BODY: {
+    ACCELERATION: base.ACCEL * 0.75,
+    SPEED: base.SPEED * 0.9,
+    FOV: base.FOV * 1.1,
+  },
+  MAX_CHILDREN: 8,
+  GUNS: [
+    {
+      /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+      POSITION: [6, 12, 1.2, 8, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.drone, g.over]),
+        TYPE: "drone",
+        AUTOFIRE: true,
+        SYNCS_SKILLS: true,
+        STAT_CALCULATOR: gunCalcNames.drone,
+        WAIT_TO_CYCLE: true,
+      },
+    },
+    {
+      POSITION: [10, 10, 0, 8, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "pillbox",
+        SYNCS_SKILLS: true,
+        STAT_CALCULATOR: gunCalcNames.drone,
+      },
+    },
+  ],
+};
+exports.Hunter2 = {
+  PARENT: "genericTank",
+  LABEL: "Hunter",
+  GUNS: [
+    {
+      POSITION: [4, 4, 1, 23, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.mach, g.shotgun]),
+        TYPE: "casing",
+      },
+    },
+    {
+      POSITION: [4, 4, 1, 23, 1, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.mach, g.shotgun]),
+        TYPE: "casing",
+      },
+    },
+    {
+      POSITION: [4, 4, 1, 22, -1, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.mach, g.shotgun]),
+        TYPE: "casing",
+      },
+    },
+    {
+      POSITION: [4, 4, 1, 21, 1, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.mach, g.shotgun]),
+        TYPE: "casing",
+      },
+    },
+    {
+      POSITION: [4, 4, 1, 23, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.mach, g.shotgun]),
+        TYPE: "casing",
+      },
+    },
+    {
+      POSITION: [4, 4, 1, 22, 2, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.mach, g.shotgun]),
+        TYPE: "casing",
+      },
+    },
+    {
+      POSITION: [4, 4, 1, 22, -2, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.mach, g.shotgun]),
+        TYPE: "casing",
+      },
+    },
+    {
+      POSITION: [4, 4, 1, 20, -2, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.mach, g.shotgun]),
+        TYPE: "casing",
+      },
+    },
+    {
+      POSITION: [4, 4, 1, 20, 2, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.mach, g.shotgun]),
+        TYPE: "casing",
+      },
+    },
+    {
+      POSITION: [19, 13, 1, 0, 0, 0, 0],
+    },
+    {
+      POSITION: [27, 10, 1, 0, 0, 0, 0],
+    },
+  ],
+};
+exports.miniArenaCloser = {
+  PARENT: "genericTank",
+  LABEL: "Mini Arena Closer",
+  COLOR: "yellow",
+  UPGRADE_COLOR: "yellow",
+  LAYER: 13,
+  BODY: {
+    REGEN: 1e5,
+    HEALTH: 1e6,
+    DENSITY: 30,
+    DAMAGE: 1e5,
+    FOV: 10,
+    SPEED: 8,
+  },
+  SKILL: skillSet({
+    rld: 1,
+    dam: 1,
+    pen: 1,
+    str: 1,
+    spd: 1,
+    atk: 1,
+    hlt: 1,
+    shi: 1,
+    rgn: 1,
+    mob: 1,
+  }),
+  DRAW_HEALTH: false,
+  HITS_OWN_TYPE: "never",
+  ARENA_CLOSER: true,
+  GUNS: [
+    {
+      POSITION: [14, 8, 1, 0, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.op]),
+        TYPE: "bullet",
+      },
+    },
+  ],
+};
+exports.streamhiver = {
+  PARENT: ["genericTank"],
+  LABEL: "StreamHiver",
+  DAMAGE_CLASS: 5,
+  GUNS: [
+    {
+      POSITION: [27, 8, -2, 0, 0, 0.5, 0.75],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bee",
+      },
+    },
+    {
+      POSITION: [23, 8, -2, 0, 0, -0.5, 0.25],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bee",
+      },
+    },
+    {
+      POSITION: [19, 8, -2, 0, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bee",
+      },
+    },
+  ],
+};
+exports.redistibutor = {
+  PARENT: "genericTank",
+  LABEL: "Redistibutor",
+  GUNS: [
+    {
+      POSITION: [15, 17, 1, 0, 0, 0, 0],
+    },
+    {
+      POSITION: [5, 13, -1.4, 14, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.rapture, g.redistibutor]),
+        TYPE: "bulletspike",
+      },
+    },
+    {
+      POSITION: [20, 3, 1, 0, 0, 30, 0],
+    },
+    {
+      POSITION: [20, 3, 1, 0, 0, -30, 0],
+    },
+    {
+      POSITION: [5, 3, 1, 11, 0, -15, 0],
+    },
+    {
+      POSITION: [5, 3, 1, 11, 0, 15, 0],
+    },
+    {
+      POSITION: [5, 4, 1, 11, 0, 0, 0],
+    },
+  ],
+};
+exports.redistibutorop = {
+  PARENT: "genericTank",
+  LABEL: "OP Redistibutor",
+  GUNS: [
+    {
+      POSITION: [15, 17, 1, 0, 0, 0, 0],
+    },
+    {
+      POSITION: [5, 13, -1.4, 14, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([
+          g.basic,
+          g.rapture,
+          g.redistibutor,
+          g.shot,
+          g.fastermachineshot,
+        ]),
+        TYPE: "bulletspike",
+      },
+    },
+    {
+      POSITION: [20, 3, 1, 0, 0, 30, 0],
+    },
+    {
+      POSITION: [20, 3, 1, 0, 0, -30, 0],
+    },
+    {
+      POSITION: [5, 3, 1, 11, 0, -15, 0],
+    },
+    {
+      POSITION: [5, 3, 1, 11, 0, 15, 0],
+    },
+    {
+      POSITION: [5, 4, 1, 11, 0, 0, 0],
+    },
+  ],
+};
 
 exports.pastdaily.UPGRADES_TIER_0 = [
   "twinFlamethrower",
@@ -4087,6 +4810,23 @@ exports.pastdaily.UPGRADES_TIER_0 = [
   "auraBasic",
   "hybannihilator",
   "ninja",
+  "boat",
+];
+exports.oldtank.UPGRADES_TIER_0 = ["newbranch", "Hunter2"];
+exports.newbranch.UPGRADES_TIER_1 = ["newbranch2", "trappers", "enginner1"];
+exports.trappers.UPGRADES_TIER_1 = ["newbranch", "trapper2"];
+exports.trapper2.UPGRADES_TIER_1 = ["trapper3"];
+exports.newbranch2.UPGRADES_TIER_1 = ["newbranch3"];
+exports.page3ofbts.UPGRADES_TIER_0 = ["OPTanks", "addons"];
+exports.OPTanks.UPGRADES_TIER_0 = ["redistibutorop"];
+exports.todaysdailytank.UPGRADES_TIER_0 = ["streamhiver"];
+exports.eventdeveloper.UPGRADES_TIER_3 = [
+  "basic",
+  "pastdaily",
+  "eventdev3betatank",
+  "eventdev4page2bts",
+  "eventdev2misc",
+  "oldtank",
 ];
 exports.ninja.UPGRADES_TIER_3 = ["tier1", "tier2", "tier3"];
 exports.arrasdev.UPGRADES_TIER_0 = ["spectator2", "defender", "guardian"];
@@ -4102,6 +4842,8 @@ exports.betatanksforfirend.UPGRADES_TIER_0 = [
   "overdestroy",
   "vulstreamliner",
   "snipy",
+  "riot",
+  "redistibutor",
 ];
 exports.customsiegestuff.UPGRADES_TIER_0 = [
   "antiTankMachineGun",
@@ -4112,6 +4854,7 @@ exports.customsiegestuff.UPGRADES_TIER_0 = [
   "healer",
   "bob",
   "metalmach",
+  "spiniBoi",
 ];
 exports.betateanks.UPGRADES_TIER_0 = [
   //"florr_tank",
@@ -4140,6 +4883,7 @@ exports.testbedformods.UPGRADES_TIER_0 = [
   "teams",
   "betatester",
   "page2ofbts",
+  "developer",
 ];
 exports.page2ofbts.UPGRADES_TIER_0 = [
   "nexusmenu",
@@ -4149,7 +4893,41 @@ exports.page2ofbts.UPGRADES_TIER_0 = [
   "betateanks",
   "pastdaily",
   "arrasdev",
+  "oldtank",
+  "eggGenerator",
+  "page3ofbts",
 ];
+exports.eventdev2misc.UPGRADES_TIER_0 = [
+  "balls",
+  "tripilet",
+  "lighter",
+  "woomyBasic",
+  "flamethrower",
+  "twinFlamethrower",
+  "rock",
+  "gravel",
+  "rapturev2",
+  "swarmist",
+  "thegrinch",
+  "metalmach",
+  "spiniBoi",
+  "defender",
+  "guardian",
+];
+exports.eventdev3betatank.UPGRADES_TIER_0 = [
+  "mummifier",
+  "auraBasic",
+  "armyOfOne",
+  "vanquisher",
+  "godbasic",
+  "ghoster",
+];
+exports.eventdev4page2bts.UPGRADES_TIER_0 = [
+  "unavailable",
+  "eventdev3betatank",
+  "pastdaily",
+];
+
 exports.nexusmenu.UPGRADES_TIER_0 = ["baseProtector"];
 
 exports.misclite.UPGRADES_TIER_0 = [
@@ -4180,6 +4958,7 @@ exports.unreleasedtanks.UPGRADES_TIER_0 = [
   "betatester",
   "ceptioniststanks",
   "tripilet",
+  "redistibutor",
 ];
 exports.removedtanks.UPGRADES_TIER_0 = ["betatester"];
 

@@ -19,6 +19,8 @@ class BossRush {
 
       //elites
       [2, "eliteDestroyer"],
+      [4, "metalmach"],
+      [5, "spiniBoi"],
       [2, "eliteGunner"],
       [2, "eliteSprayer"],
       [2, "eliteBattleship"],
@@ -104,12 +106,12 @@ class BossRush {
   }
 
   spawnSanctuary(tile, team, type = false) {
-    type = type ? type : Class.sanctuaryTier3;
+    type = type ? type : Class.sanctuaryTier5;
     let o = new Entity(tile.loc);
     o.define(type);
     o.team = team;
     o.color = getTeamColor(team);
-    o.skill.score = 111069;
+    o.skill.score = 26302;
     o.name = "Sanctuary";
     o.SIZE = room.tileWidth / 10;
     o.isDominator = true;

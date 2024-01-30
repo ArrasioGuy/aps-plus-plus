@@ -502,6 +502,11 @@ function incoming(message, socket) {
         player.body.FOV *= 4 / 5;
       }
       break;
+    case "resetFOV":
+      if (player.body != null && socket.permissions) {
+        player.body.FOV = 1;
+      }
+      break;
     case "godmodeButton":
       if (player.body != null && socket.permissions) {
         player.body.godmode = !player.body.godmode;
@@ -532,16 +537,17 @@ function incoming(message, socket) {
       break;
     case "helpmen":
       if (player.body != null && socket.permissions) {
-        player.body.sendMessage("g : teleport");
-        player.body.sendMessage("] : drag");
-        player.body.sendMessage(". : bigger");
-        player.body.sendMessage(", : smaller");
-        player.body.sendMessage("; : god mode");
-        player.body.sendMessage("' : vanish");
-        player.body.sendMessage("- : Zoom out");
-        player.body.sendMessage("= : Zoom In");
-        player.body.sendMessage("[ : kill");
-        player.body.sendMessage("` : Developer/Beta Tester Tank");
+        player.body.sendMessage("g -> teleport");
+        player.body.sendMessage("] -> drag");
+        player.body.sendMessage(". -> bigger");
+        player.body.sendMessage(", -> smaller");
+        player.body.sendMessage("; -> god mode");
+        player.body.sendMessage("' -> vanish");
+        player.body.sendMessage("- -> Zoom out");
+        player.body.sendMessage("= -> Zoom In");
+        player.body.sendMessage("[ -> kill");
+        player.body.sendMessage("` -> Developer/Beta Tester Tank");
+        player.body.sendMessage("Backspace -> Reset FOV");
       }
     case "drag":
       {

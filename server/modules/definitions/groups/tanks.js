@@ -5117,7 +5117,7 @@ exports.basic.UPGRADES_TIER_1 = [
   "trapper",
   "desmos",
   "bonfire",
-  "woomyBasic",
+  "todaysdailytank",
 ];
 exports.basic.UPGRADES_TIER_2 = ["smasher"];
 exports.smasher.UPGRADES_TIER_3 = [
@@ -5265,7 +5265,7 @@ exports.cruiser.UPGRADES_TIER_3 = [
   "commander",
 ];
 exports.underseer.UPGRADES_TIER_3 = ["necromancer", "maleficitor", "infestor"];
-exports.necromancer.UPGRADES_TIER_3 = ["mystic"];
+exports.necromancer.UPGRADES_TIER_3 = ["mystic", "mummifier"];
 exports.spawner.UPGRADES_TIER_3 = ["factory", "autoSpawner"];
 
 exports.pounder.UPGRADES_TIER_2 = [
@@ -5328,3 +5328,4 @@ exports.nailgun.UPGRADES_TIER_3 = ["nailer"];
 exports.desmos.UPGRADES_TIER_2 = ["volute", "helix"];
 exports.volute.UPGRADES_TIER_3 = ["sidewinder", "biggermos"];
 exports.helix.UPGRADES_TIER_3 = ["triplex", "quadruplex"];
+//exports.twin.UPGRADES_TIER_5 = ["riot"]
