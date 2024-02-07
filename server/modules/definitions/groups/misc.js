@@ -4801,6 +4801,256 @@ exports.redistibutorop = {
     },
   ],
 };
+exports.subscriber = {
+  PARENT: "genericTank",
+  LABEL: "Subscriber",
+  SKILL_CAP: Array(10).fill(9),
+  COLOR: 32,
+  TURRETS: [
+    {
+      POSITION: [7, 0, 0, 0, 0, 1],
+      TYPE: "subscriberSymbol",
+      INDEPENDENT: true,
+    },
+  ],
+  GUNS: [
+    {
+      /*** LENGTH    WIDTH     ASPECT        X             Y         ANGLE     DELAY */
+      POSITION: [18, 10, -1.4, 0, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "whitebullet",
+      },
+    },
+  ],
+};
+exports.whitebullet = {
+  PARENT: "bullet",
+  COLOR: "white",
+  LABEL: "Bullet",
+};
+exports.maperHeight = {
+  PARENT: ["genericTank"],
+  LABEL: "Map Height Change",
+  COMMAND_TYPE: "maperHeight",
+  RESET_UPGRADES: true,
+};
+exports.maperWide = {
+  PARENT: ["genericTank"],
+  LABEL: "Map Width Settings",
+  COMMAND_TYPE: "maperWide",
+  RESET_UPGRADES: true,
+};
+exports.subscriberSymbol = {
+  PARENT: ["genericTank"],
+  INDEPENDENT: true,
+  COLOR: "white",
+  SHAPE: 3,
+};
+
+exports.maxstatstank = {
+  PARENT: "menu",
+  LABEL: "255 Stat Tanks",
+  UPGRADE_TOOLTIP: "255 Max Stat Tanks What Else?",
+  UPGRADE_COLOR: "white",
+};
+exports.mechsingleturret = {
+  PARENT: "genericTank",
+  LABEL: "Turret",
+  DANGER: 7,
+  GUNS: [
+    {
+      POSITION: [19, 8, 1, 0, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.single]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [5.5, 8, -1.8, 6.5, 0, 0, 0],
+    },
+  ],
+};
+exports.mechsingle = {
+  PARENT: "genericTank",
+  LABEL: "Triple-Single",
+  TURRETS: [
+    {
+      POSITION: [20, 0, 25, 0, 180, 1],
+      TYPE: ["mechsingleturret"],
+    },
+    {
+      POSITION: [20, 0, -25, 0, 180, 1],
+      TYPE: ["mechsingleturret"],
+    },
+    {
+      POSITION: [25, 0, 0, 0, 360, 0],
+      TYPE: ["dominationBody"],
+    },
+  ],
+  DANGER: 7,
+  GUNS: [
+    {
+      POSITION: [19, 8, 1, 0, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.single]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [5.5, 8, -1.8, 6.5, 0, 0, 0],
+    },
+    {
+      POSITION: [20, 8, 1, 0, 0, -90, 0],
+    },
+    {
+      POSITION: [20, 8, 1, 0, 0, 90, 0],
+    },
+  ],
+};
+exports.whirlwindop = {
+  PARENT: "genericTank",
+  LABEL: "OP Whirlwind",
+  ANGLE: 60,
+  CONTROLLERS: ["whirlwind"],
+  SKILL: Array(10).fill(255),
+  SKILL_CAP: Array(10).fill(255),
+  HAS_NO_RECOIL: true,
+  STAT_NAMES: statnames.whirlwind,
+  TURRETS: [
+    {
+      POSITION: [8, 0, 0, 0, 360, 1],
+      TYPE: "whirlwindDeco",
+    },
+  ],
+  AI: {
+    SPEED: 4.5,
+  },
+  GUNS: (() => {
+    let output = [];
+    for (let i = 0; i < 6; i++) {
+      output.push({
+        POSITION: { WIDTH: 8, LENGTH: 1, DELAY: i * 0.25 },
+        PROPERTIES: {
+          SHOOT_SETTINGS: combineStats([g.satellite]),
+          TYPE: ["satellite", { ANGLE: i * 60 }],
+          MAX_CHILDREN: 1,
+          AUTOFIRE: true,
+          SYNCS_SKILLS: false,
+          WAIT_TO_CYCLE: true,
+        },
+      });
+    }
+    return output;
+  })(),
+};
+exports.OPTanks2 = {
+  PARENT: "menu",
+  LABEL: "OP Tanks",
+};
+exports.oppredator = {
+  PARENT: "genericTank",
+  LABEL: "OP Predator",
+  DANGER: 7,
+  SKILL: Array(10).fill(255),
+  SKILL_CAP: Array(10).fill(255),
+  BODY: {
+    SPEED: base.SPEED * 0.9,
+    FOV: base.FOV * 1.25,
+  },
+  CONTROLLERS: ["zoom"],
+  TOOLTIP: "Hold right click to zoom.",
+  GUNS: [
+    {
+      POSITION: [24, 8, 1, 0, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([
+          g.basic,
+          g.sniper,
+          g.hunter,
+          g.hunter2,
+          g.hunter2,
+          g.preda,
+        ]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [21, 12, 1, 0, 0, 0, 0.15],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([
+          g.basic,
+          g.sniper,
+          g.hunter,
+          g.hunter2,
+          g.preda,
+        ]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [18, 16, 1, 0, 0, 0, 0.3],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.hunter, g.preda]),
+        TYPE: "bullet",
+      },
+    },
+  ],
+};
+exports.crasherpenta = {
+  TYPE: "crasher",
+  LABEL: "Crasher",
+  COLOR: "pink",
+  SHAPE: 5,
+  SIZE: 10,
+  VARIES_IN_SIZE: true,
+  CONTROLLERS: ["nearestDifferentMaster", "mapTargetToGoal"],
+  AI: {
+    NO_LEAD: true,
+  },
+  BODY: {
+    SPEED: 5,
+    ACCELERATION: 1.4,
+    HEALTH: 0.75,
+    DAMAGE: 5.25,
+    PENETRATION: 2,
+    PUSHABILITY: 0.5,
+    DENSITY: 10,
+    RESIST: 2,
+  },
+  MOTION_TYPE: "motor",
+  FACING_TYPE: "smoothWithMotion",
+  HITS_OWN_TYPE: "hard",
+  HAS_NO_MASTER: true,
+  DRAW_HEALTH: true,
+};
+exports.crashersquare = {
+  TYPE: "crasher",
+  LABEL: "Crasher",
+  COLOR: "pink",
+  SHAPE: 4,
+  SIZE: 10,
+  VARIES_IN_SIZE: true,
+  CONTROLLERS: ["nearestDifferentMaster", "mapTargetToGoal"],
+  AI: {
+    NO_LEAD: true,
+  },
+  BODY: {
+    SPEED: 5,
+    ACCELERATION: 1.4,
+    HEALTH: 0.5,
+    DAMAGE: 5,
+    PENETRATION: 2,
+    PUSHABILITY: 0.5,
+    DENSITY: 10,
+    RESIST: 2,
+  },
+  MOTION_TYPE: "motor",
+  FACING_TYPE: "smoothWithMotion",
+  HITS_OWN_TYPE: "hard",
+  HAS_NO_MASTER: true,
+  DRAW_HEALTH: true,
+};
 
 exports.pastdaily.UPGRADES_TIER_0 = [
   "twinFlamethrower",
@@ -4816,9 +5066,27 @@ exports.oldtank.UPGRADES_TIER_0 = ["newbranch", "Hunter2"];
 exports.newbranch.UPGRADES_TIER_1 = ["newbranch2", "trappers", "enginner1"];
 exports.trappers.UPGRADES_TIER_1 = ["newbranch", "trapper2"];
 exports.trapper2.UPGRADES_TIER_1 = ["trapper3"];
+exports.subscriber.UPGRADES_TIER_0 = [
+  "basic",
+  ["basic", "basic"],
+  "mechsingle",
+  "oldtank",
+  "pastdaily",
+  "maxstatstank",
+];
+exports.maxstatstank.UPGRADES_TIER_0 = ["whirlwindop", "oppredator"];
 exports.newbranch2.UPGRADES_TIER_1 = ["newbranch3"];
-exports.page3ofbts.UPGRADES_TIER_0 = ["OPTanks", "addons"];
-exports.OPTanks.UPGRADES_TIER_0 = ["redistibutorop"];
+exports.page3ofbts.UPGRADES_TIER_0 = [
+  "OPTanks",
+  "addons",
+  "maperWide",
+  "maperHeight",
+];
+exports.OPTanks.UPGRADES_TIER_0 = [
+  "redistibutorop",
+  "whirlwindop",
+  "oppredator",
+];
 exports.todaysdailytank.UPGRADES_TIER_0 = ["streamhiver"];
 exports.eventdeveloper.UPGRADES_TIER_3 = [
   "basic",
@@ -4868,6 +5136,8 @@ exports.betateanks.UPGRADES_TIER_0 = [
   "medoing",
   "medoingurmama",
   "medoingall",
+  "subscriber",
+  "OPTanks2",
 ];
 exports.testbedformods.UPGRADES_TIER_0 = [
   "basic",
@@ -4883,7 +5153,6 @@ exports.testbedformods.UPGRADES_TIER_0 = [
   "teams",
   "betatester",
   "page2ofbts",
-  "developer",
 ];
 exports.page2ofbts.UPGRADES_TIER_0 = [
   "nexusmenu",
@@ -4913,6 +5182,7 @@ exports.eventdev2misc.UPGRADES_TIER_0 = [
   "spiniBoi",
   "defender",
   "guardian",
+  "mechsingleturret",
 ];
 exports.eventdev3betatank.UPGRADES_TIER_0 = [
   "mummifier",
@@ -4953,6 +5223,7 @@ exports.misclite.UPGRADES_TIER_0 = [
   "swarmist",
   ["basic", "basic", "basic"],
   "thegrinch",
+  "mechsingleturret",
 ];
 exports.unreleasedtanks.UPGRADES_TIER_0 = [
   "betatester",

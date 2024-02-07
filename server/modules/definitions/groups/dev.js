@@ -312,6 +312,8 @@ let generatorMatrix = [
       "legendarySquare",
       "shadowSquare",
       "rainbowSquare",
+      "crasherpenta",
+      "crashersquare",
       "transSquare",
       "SquareRelic",
     ],
@@ -1840,6 +1842,7 @@ exports.developer.UPGRADES_TIER_0 = [
   "youtuber",
   "testmotiongrowtank",
   "miniArenaCloser",
+  "subscriber",
 ];
 exports.tanks.UPGRADES_TIER_0 = [
   "basic",

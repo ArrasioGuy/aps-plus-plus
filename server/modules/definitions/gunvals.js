@@ -72,7 +72,7 @@ module.exports = {
     speed: 3,
     maxSpeed: 2.75,
   },
-  shot: { reload: 0.01, size: 1 },
+  shot: { reload: 0.01, size: 1, spray: 5, density: 1.5 },
   // Bases
   basic: {
     reload: 18,

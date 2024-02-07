@@ -35,4 +35,8 @@ module.exports = [
     name: "unnamed#0000",
     note: "note here",
   },
+  {
+    key: process.env.TOKEN_5,
+    class: "subscriber",
+  },
 ];
