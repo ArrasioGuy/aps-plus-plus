@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
-    <meta name="description" content="This server runs on Open Source Arras.">
+    <meta name="description" content="...">
     <meta name="robots" content="index, follow">
     <meta property="og:image" content="./round.png">
     <meta property="og:image:width" content="54">
@@ -25,14 +25,15 @@
         <div id="startMenuWrapper">
             <div id="startMenu">
                 <div class="startMenuHolder">
-                  <center>Hello! Um This is The Place that i might livestreaming on!<br>For more info, visit <a href="https://discord.gg/MqpztFeP95">the Discord Server!</a> <a href="https://youtube.com/@contentarras">Or My Channel!</a></center><br><center>This Server Runs On APS++! :D</center><center>Beta Testers/Mods/Other:</center><br><center>Hamster (Game Mod), Czarko (Beta Tanks Guy), KOOLer (Game Beta Tester), Krolik (Beta Tanks Guy)</center><br><center>Free Token: ThankYouForPlaying!</center><br></br><br></br><br></br><br></br>
+                  <center>Hello! This is The Place that i might livestream on!<br>For more info, visit <a href="https://discord.gg/MqpztFeP95">the Discord Server!</a> <a href="https://youtube.com/@contentarras">Or My Channel!</a></center><br><center>This Server Runs On APS++! :D</center>
+                  <iframe src="https://discord.com/widget?id=1180868616372105256&theme=dark" width="365" height="250" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
                   <div id="bottomHolder">
                     <!--<a class="link youtube"   href="https://www.youtube.com/arrasio">Arras.io YouTube</a>
                     <a class="link reddit"    href="https://reddit.com/r/arrasio">Arras.io Subreddit</a>
                     <a class="link original"  href="https://arras.io/">Arras.io Game</a>-->
                     <a class="link discord"   href="https://discord.gg/MqpztFeP95">Discord Server</a>
-                    <a class="link developer" href="https://youtube.com/@contentarras">Developer's Youtube Channel!</a>
-                    <a class="link developer" href="https://youtube.com/@contentextras">Developer's Second Channel!</a>
+                    <a class="link developer" href="https://youtube.com/@contentarras">YT Channel!</a>
+                    <!--<a class="link developer" href="https://youtube.com/@contentextras">Developer's Second Channel!</a>-->
 
                 </div>
                 </div>
@@ -49,7 +50,7 @@
                             <input type="text" class="conceal" tabindex="3" placeholder="Insert token here.json" id="playerKeyInput" maxlength="64" />
                         </div>
                         <div class="slider" id="startMenuSlidingTrigger">
-                            <h3 class="nopadding">Options</h3>
+                            <h3 class="nopadding">Options 🔻</h3>
                         </div>
                         <div class="slider">
                             <br>
@@ -118,7 +119,7 @@
                     </div>
                 </div>
                 <div class="startMenuHolder">
-                    <span class="titleSpan">Changelog: The Breaking Stuff</span>
+                    <span class="titleSpan">Changelog</span>
                     <div id="patchNotes" class="shadowScroll"></div>
                 </div>
             </div>
@@ -140,10 +141,10 @@
         $("#startMenuSlidingTrigger").on('click', function() {
             clicked = !clicked;
             if (clicked) {
-                $(this).html('<h3 class="nopadding">Close Options</h3>');
+                $(this).html('<h3 class="nopadding">Close Options 🔺</h3>');
                 $(".slider").css({ "top": "-265px" })
             } else {
-                $(this).html('<h3 class="nopadding">Options</h3>');
+                $(this).html('<h3 class="nopadding">Options 🔻</h3>');
                 $(".slider").css({ "top": 0 });
             }
         });

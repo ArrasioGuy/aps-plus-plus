@@ -1,3 +1,3 @@
 module.exports = {
-  ROOM_SETUP: ["overlay_tdm"],
+  ROOM_SETUP: ["bad_map_no_rock"],
 };

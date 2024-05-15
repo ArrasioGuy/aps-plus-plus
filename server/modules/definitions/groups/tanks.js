@@ -17,6 +17,7 @@ const {
 } = require("../constants.js");
 const generics = require("./generics.js");
 const g = require("../gunvals.js");
+const { trinuke } = require("./misc.js");
 
 // Missiles
 exports.missile = {
@@ -3866,6 +3867,7 @@ exports.builder = {
   PARENT: "genericTank",
   DANGER: 6,
   LABEL: "Builder",
+  UPGRADES_TIER_3: ["beetle"],
   STAT_NAMES: statnames.trap,
   BODY: {
     SPEED: 0.8 * base.SPEED,
@@ -5117,6 +5119,7 @@ exports.basic.UPGRADES_TIER_1 = [
   "trapper",
   "desmos",
   "bonfire",
+  "aimbotBasic",
   "todaysdailytank",
 ];
 exports.basic.UPGRADES_TIER_2 = ["smasher"];
@@ -5128,9 +5131,10 @@ exports.smasher.UPGRADES_TIER_3 = [
   "lightningRammer",
   "Rammer",
   "drifter",
+  "developerspecial",
 ];
 exports.healer.UPGRADES_TIER_3 = ["medic", "ambulance", "surgeon", "paramedic"];
-exports.annihilator.UPGRADES_TIER_3 = ["bigmac"];
+exports.annihilator.UPGRADES_TIER_3 = ["bigmac", "ak46"];
 exports.twin.UPGRADES_TIER_2 = [
   "doubleTwin",
   "tripleShot",
@@ -5160,6 +5164,7 @@ exports.tripleShot.UPGRADES_TIER_3 = [
   "triplet",
   "triplex",
 ];
+exports.bentDouble.UPGRADES_TIER_3 = ["crab"];
 exports.sniper.UPGRADES_TIER_2 = ["assassin", "hunter", "minigun", "rifle"];
 exports.sniper.UPGRADES_TIER_3 = ["bushwhacker"];
 exports.assassin.UPGRADES_TIER_3 = [
@@ -5169,6 +5174,7 @@ exports.assassin.UPGRADES_TIER_3 = [
   "autoAssassin",
   "single",
 ];
+exports.single.UPGRADES_TIER_3 = ["mechsingle"];
 exports.hunter.UPGRADES_TIER_3 = [
   "predator",
   "xHunter",
@@ -5177,8 +5183,10 @@ exports.hunter.UPGRADES_TIER_3 = [
   "dual",
   "prelatorMachine",
 ];
+exports.dual.UPGRADES_TIER_3 = ["dualator"];
+exports.musket.UPGRADES_TIER_3 = ["dualator"];
 exports.rifle.UPGRADES_TIER_3 = ["musket", "crossbow", "armsman"];
-exports.booster.UPGRADES_TIER_3 = ["berker"];
+exports.booster.UPGRADES_TIER_3 = ["master"];
 exports.machineGun.UPGRADES_TIER_2 = [
   "artillery",
   "minigun",
@@ -5206,12 +5214,14 @@ exports.gunner.UPGRADES_TIER_3 = [
   "tornado",
   "overgunner",
   "lighter",
+  "petteler",
 ];
 exports.sprayer.UPGRADES_TIER_3 = [
   "redistributor",
   "phoenix",
   "atomizer",
   "focal",
+  "sprayator",
 ];
 
 exports.flankGuard.UPGRADES_TIER_2 = [
@@ -5231,6 +5241,7 @@ exports.triAngle.UPGRADES_TIER_3 = [
   "falcon",
   "bomber",
   "autoTriAngle",
+  "raven",
   "surfer",
   "eagle",
   "phoenix",
@@ -5244,6 +5255,7 @@ exports.director.UPGRADES_TIER_2 = [
   "cruiser",
   "underseer",
   "spawner",
+  "coordinator",
 ];
 exports.director.UPGRADES_TIER_3 = ["manager", "bigCheese"];
 exports.bigCheese.UPGRADES_TIER_3 = ["biggerCheese", "overcheese"];
@@ -5255,6 +5267,7 @@ exports.overseer.UPGRADES_TIER_3 = [
   "autoOverseer",
   "overdrive",
   "commander",
+  "adviser",
 ];
 exports.overlord.UPGRADES_TIER_3 = ["captain"];
 exports.cruiser.UPGRADES_TIER_3 = [
@@ -5265,7 +5278,11 @@ exports.cruiser.UPGRADES_TIER_3 = [
   "commander",
 ];
 exports.underseer.UPGRADES_TIER_3 = ["necromancer", "maleficitor", "infestor"];
-exports.necromancer.UPGRADES_TIER_3 = ["mystic", "mummifier"];
+exports.necromancer.UPGRADES_TIER_3 = [
+  "triamancer",
+  "mummifier",
+  "pentamancer",
+];
 exports.spawner.UPGRADES_TIER_3 = ["factory", "autoSpawner"];
 
 exports.pounder.UPGRADES_TIER_2 = [
@@ -5277,6 +5294,7 @@ exports.pounder.UPGRADES_TIER_2 = [
 ];
 exports.spike.UPGRADES_TIER_3 = ["boxer"];
 exports.pounder.UPGRADES_TIER_3 = ["shotgun", "eagle"];
+exports.shotgun.UPGRADES_TIER_3 = ["shotgunner"];
 exports.destroyer.UPGRADES_TIER_3 = [
   "conqueror",
   "annihilator",
@@ -5297,7 +5315,9 @@ exports.launcher.UPGRADES_TIER_3 = [
   "swarmer",
   "rocketeer",
   "fieldGun",
+  "missler",
 ];
+//exports.twister.UPGRADES_TIER_3 = ["twisty"];
 
 exports.trapper.UPGRADES_TIER_2 = ["builder", "triTrapper", "trapGuard"];
 exports.trapper.UPGRADES_TIER_3 = ["barricade", "overtrapper"];
@@ -5309,6 +5329,8 @@ exports.builder.UPGRADES_TIER_3 = [
   "assembler",
   "architect",
   "conqueror",
+  "microscope",
+  "beetle",
 ];
 exports.construct.UPGRADES_TIER_3 = ["assemblerbutbig"];
 exports.triTrapper.UPGRADES_TIER_3 = [
@@ -5329,3 +5351,9 @@ exports.desmos.UPGRADES_TIER_2 = ["volute", "helix"];
 exports.volute.UPGRADES_TIER_3 = ["sidewinder", "biggermos"];
 exports.helix.UPGRADES_TIER_3 = ["triplex", "quadruplex"];
 //exports.twin.UPGRADES_TIER_5 = ["riot"]
+exports.triplet.UPGRADES_TIER_3 = ["ak46"];
+exports.architect.UPGRADES_TIER_3 = ["trinuke"];
+exports.helix.UPGRADES_TIER_3 = ["triplex", "quadruplex"];
+//exports.twin.UPGRADES_TIER_5 = ["riot"]
+exports.triplet.UPGRADES_TIER_3 = ["ak46"];
+exports.architect.UPGRADES_TIER_3 = ["trinuke"];

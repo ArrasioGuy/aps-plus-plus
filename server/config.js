@@ -21,6 +21,7 @@ module.exports = {
   // The \modules\setup\gamemodeconfigs\ files to load.
   // To change specific things about specific gamemodes (such as team count for tdm), edit their config file in \modules\setup\gamemodeconfigs\.
   GAME_MODES: ["growth", "siege"],
+  FIREWORKS: true,
 
   // The room files to load in the setup/rooms folder.
   // NOTE: If a /gamemodeconfig/ file "replaces" the value of ROOM_SETUP, it just adds its own ROOM_SETUP's content to this array.
@@ -37,7 +38,7 @@ module.exports = {
   // How long a entity chat message lasts in milliseconds.
   // Includes the fade-out period.
   CHAT_MESSAGE_DURATION: 30_000,
-
+  CHAT_MESSAGE_CHARACTER_LIMIT: 25,
   // If you don't want your players to color their messages.
   // They get sanitized after addons interpret them, but before they're added to the chat message dictionary.
   SANITIZE_CHAT_MESSAGE_COLORS: true,
@@ -55,7 +56,7 @@ module.exports = {
   WELCOME_MESSAGE:
     "You have spawned! Welcome to the game.\n" +
     "You will be invulnerable until you move or shoot.\n" +
-    "Hello! Content Here! Join My Discord Server! .gg/MqpztFeP95",
+    "Hello! Content Here! Join My Discord Server! discord.gg/MqpztFeP95",
 
   // Physics
 
@@ -99,7 +100,7 @@ module.exports = {
   // Max level you get by level-up key and auto-level-up.
   LEVEL_CHEAT_CAP: 45,
 
-  // Amount of playear-bots to spawn.
+  // Amount of player-bots to spawn.
   BOTS: 0,
 
   // How much XP player-bots get per second until they reach LEVEL_CAP.
@@ -129,10 +130,10 @@ module.exports = {
   ENEMY_SPAWN_COOLDOWN_NEST: 60, // Cooldown (in game ticks) of nest enemies spawn attempts being made.
 
   // Cooldown (in seconds) of boss spawns being announced.
-  BOSS_SPAWN_COOLDOWN: 60,
+  BOSS_SPAWN_COOLDOWN: 21473432,
   // The delay (in seconds) between the boss spawns being announced and the bosses actually spawning.
   // NOTE: The spawn message (ex. "A strange trembling...") takes half as long to appear than the boss.
-  BOSS_SPAWN_DURATION: 5,
+  BOSS_SPAWN_DURATION: 21473432,
 
   // The possible food types that can spawn.
   FOOD_TYPES: [

@@ -613,17 +613,51 @@ for (let tier = 0; tier < 6; tier++) {
     }
   }
 }
-exports.redandbluetriangle = {
+exports.epilepsytriangle = {
   PARENT: ["food"],
-  LABEL: "Square",
-  VALUE: 30000000,
+  LABEL: "Epilepsy Triangle",
+  VALUE: 20000000,
   SHAPE: 3,
-  SIZE: 40,
+  SIZE: 30,
   COLOR: 20,
   BODY: {
     DAMAGE: 4,
     DENSITY: 4,
     HEALTH: 500,
+    PENETRATION: 2,
+    ACCELERATION: 0.0075,
+  },
+  DRAW_HEALTH: true,
+  INTANGIBLE: false,
+};
+exports.epilepsysquare = {
+  PARENT: ["food"],
+  LABEL: "Epilepsy Square",
+  VALUE: 10000000,
+  SHAPE: 4,
+  SIZE: 20,
+  COLOR: 20,
+  BODY: {
+    DAMAGE: 4,
+    DENSITY: 4,
+    HEALTH: 250,
+    PENETRATION: 2,
+    ACCELERATION: 0.0075,
+  },
+  DRAW_HEALTH: true,
+  INTANGIBLE: false,
+};
+exports.epilepsypentagon = {
+  PARENT: ["food"],
+  LABEL: "Epilepsy Pentagon",
+  VALUE: 30000000,
+  SHAPE: 5,
+  SIZE: 40,
+  COLOR: 20,
+  BODY: {
+    DAMAGE: 4,
+    DENSITY: 4,
+    HEALTH: 750,
     PENETRATION: 2,
     ACCELERATION: 0.0075,
   },

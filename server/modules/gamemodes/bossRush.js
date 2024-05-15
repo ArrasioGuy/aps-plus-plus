@@ -19,8 +19,8 @@ class BossRush {
 
       //elites
       [2, "eliteDestroyer"],
-      [4, "metalmach"],
-      [5, "spiniBoi"],
+      //[4, "metalmach"],
+      //[5, "spiniBoi"],
       [2, "eliteGunner"],
       [2, "eliteSprayer"],
       [2, "eliteBattleship"],

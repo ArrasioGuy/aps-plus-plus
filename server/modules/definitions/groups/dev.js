@@ -41,8 +41,10 @@ exports.menu = {
 exports.developer = {
   PARENT: ["menu"],
   LABEL: "Developer",
-  COLOR: 30,
+  //COLOR: 30,
   LEVEL: 45,
+  SKILL: Array(10).fill(255),
+  SKILL_CAP: Array(10).fill(255),
   BODY: {
     SHIELD: 1000,
     REGEN: 10,
@@ -324,6 +326,8 @@ let generatorMatrix = [
       "shadowTriangle",
       "rainbowTriangle",
       "transTriangle",
+      "epilepsytriangle",
+      "epilepsysquare",
       "TriangleRelic",
     ],
     [
@@ -333,6 +337,7 @@ let generatorMatrix = [
       "shadowPentagon",
       "rainbowPentagon",
       "transPentagon",
+      "epilepsypentagon",
       "PentagonRelic",
     ],
     [
@@ -1838,7 +1843,6 @@ exports.developer.UPGRADES_TIER_0 = [
   "betatanksforfirend",
   "battleshit",
   "bromycatslipped",
-  "generatorbluead",
   "youtuber",
   "testmotiongrowtank",
   "miniArenaCloser",
@@ -1950,6 +1954,1162 @@ exports.devBosses.UPGRADES_TIER_0 = [
   "dogeiscutBoss",
   "trplnrBoss",
 ];
+exports.tier4tanks = {
+  PARENT: "menu",
+  LABEL: "Tier 4",
+};
+exports.tier4assass = {
+  PARENT: "genericTank",
+  LABEL: "Tier 4 Assassin",
+  GUNS: [
+    {
+      POSITION: [14, 10, -2, 0, 0, 0, 0],
+    },
+    {
+      POSITION: [24, 8, 1, 0, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.assass, g.tier4assass]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [6, 3, 1, 15, 0, 0, 0],
+    },
+    {
+      POSITION: [3, 3, 1, 16.5, 0, 0, 0],
+    },
+    {
+      POSITION: [3, 3, 1, 11, 0, 52.5, 0],
+    },
+    {
+      POSITION: [3, 3, 1, 11, 0, -52.5, 0],
+    },
+  ],
+};
+
+exports.tier4Triple = {
+  PARENT: "genericTank",
+  LABEL: "Tier 4 Triple",
+  GUNS: [
+    {
+      POSITION: [20, 8, 1, 0, 6, 0, 0.5],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triple]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [20, 8, 1, 0, -6, 0, 0.25],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triple]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [24, 8, 1, 0, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triple]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [14, 10, 1.5, 0, 0, -90, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.drone]),
+        TYPE: "drone",
+        AUTO_FIRE: true,
+        MAX_CHILDREN: 2,
+      },
+    },
+    {
+      POSITION: [14, 10, 1.5, 0, 0, 90, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.drone]),
+        TYPE: "drone",
+        AUTO_FIRE: true,
+        MAX_CHILDREN: 2,
+      },
+    },
+  ],
+};
+exports.tier4FlankGuard = {
+  PARENT: "genericTank",
+  LABEL: "Tier 4 Flank Guard",
+  GUNS: [
+    {
+      POSITION: [18, 8, 1, 0, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.flank]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [18, 8, 1, 0, 0, -112.5, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.flank]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [18, 8, 1, 0, 0, -180, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.flank]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [18, 8, 1, 0, 0, 52.5, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.flank]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [18, 8, 1, 0, 0, -52.5, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.flank]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [18, 8, 1, 0, 0, 120, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.flank]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [6, 4, 1, 11, 0, 0, 0],
+    },
+    {
+      POSITION: [6, 4, 1, 11, 0, -52.5, 0],
+    },
+    {
+      POSITION: [6, 4, 1, 11, 0, -112.5, 0],
+    },
+    {
+      POSITION: [6, 4, 1, 11, 0, 180, 0],
+    },
+    {
+      POSITION: [6, 4, 1, 11, 0, 120, 0],
+    },
+    {
+      POSITION: [6, 4, 1, 11, 0, 52.5, 0],
+    },
+    {
+      POSITION: [-5, 8, 1.4, 20, 0, 0, 0],
+    },
+    {
+      POSITION: [-5, 8, 1.4, 20, 0, -52.5, 0],
+    },
+    {
+      POSITION: [-5, 8, 1.4, 20, 0, -112.5, 0],
+    },
+    {
+      POSITION: [-5, 8, 1.4, 20, 0, -180, 0],
+    },
+    {
+      POSITION: [-5, 8, 1.4, 20, 0, 120, 0],
+    },
+    {
+      POSITION: [-5, 8, 1.4, 20, 0, 52.5, 0],
+    },
+  ],
+};
+exports.tier4Trapper = {
+  PARENT: "genericTank",
+  LABEL: "Tier 4 Trapper",
+  BODY: {
+    FOV: base.FOV * 1.2,
+  },
+  GUNS: [
+    {
+      POSITION: [19, 8, 1, 0, 0, 0, 0],
+    },
+    {
+      POSITION: [5, 7, 2, 17, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.trap, g.block]),
+        TYPE: "setTrap",
+      },
+    },
+    {
+      POSITION: [3, 4, 2, 18, 0, 0, 0],
+    },
+    {
+      POSITION: [6, 4, 1, 9, 0, 0, 0],
+    },
+    {
+      POSITION: [18, 8, 1, 0, 0, -37.5, 0],
+    },
+    {
+      POSITION: [18, 8, 1, 0, 0, 37.5, 0],
+    },
+    {
+      POSITION: [6, 7, 2, 17, 0, 37.5, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.trap, g.block]),
+        TYPE: "setTrap",
+      },
+    },
+    {
+      POSITION: [6, 7, 2, 17, 0, -37.5, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.trap, g.block]),
+        TYPE: "setTrap",
+      },
+    },
+  ],
+};
+exports.tier4Desmos = {
+  PARENT: "genericTank",
+  LABEL: "Tier 4 Desmos",
+  GUNS: [
+    {
+      POSITION: [21, 18, 1, 0, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.desmos]),
+        TYPE: ["bullet", { MOTION_TYPE: "desmos" }],
+      },
+    },
+    {
+      POSITION: [19, 11, 1, 0, 0, 0, 0],
+    },
+    {
+      POSITION: [16, 8, 1, 0, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.desmos]),
+        TYPE: ["bullet", { MOTION_TYPE: "desmos" }],
+      },
+    },
+    {
+      POSITION: [18, 8, 1, 0, 0, -90, 0],
+    },
+    {
+      POSITION: [18, 8, 1, 0, 0, 90, 0],
+    },
+    {
+      POSITION: [6, 8, 2, 17, 0, 90, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.trap]),
+        TYPE: "trap",
+      },
+    },
+    {
+      POSITION: [6, 8, 2, 17, 0, -90, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.trap]),
+        TYPE: "trap",
+      },
+    },
+    {
+      POSITION: [3.75, 10, 2.125, 1.25, 6.25, -120, 0],
+    },
+    {
+      POSITION: [3.75, 10, 2.125, 1.25, 6.25, -22.5, 0],
+    },
+    {
+      POSITION: [3.75, 10, 2.125, 5.25, 8.25, -127.5, 0],
+    },
+    {
+      POSITION: [3.75, 10, 2.125, -5.25, 8.25, -37.5, 0],
+    },
+  ],
+};
+exports.whatthefuck = {
+  PARENT: "genericTank",
+  LABEL: "what the fuck",
+  GUNS: [
+    {
+      POSITION: [18, 8, 1, 0, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+  ],
+  SHAPE: [
+    [-0.592, 0.177],
+    [-0.664, 0.25],
+    [0.024, 0.98],
+    [0.792, 0.304],
+    [0.722, 0.225],
+    [0.63, 0.317],
+    [0.626, -0.58],
+    [-0.51, -0.61],
+    [-0.514, 0.265],
+    [0.6, 0.4],
+    [-0.4, -1.4],
+    [-0.6, -1.8],
+    [0.6, -1.4],
+    [1.4, -0.8],
+    [1.8, -1],
+    [-1.8, -1.4],
+    [1.8, 2],
+    [0.6, -0.8],
+    [-1.6, 0.4],
+    [1.4, -0.8],
+    [-1.2, 0.4],
+    [-1.6, -2],
+    [0, 1.6],
+    [0.6, -1.6],
+    [-1.6, 1.2],
+    [0, 1.4],
+    [-1.8, -1.4],
+    [0.6, 1.4],
+    [-1.6, 1.8],
+    [-1, -0.6],
+    [-1.8, -0.2],
+    [-0.6, 0.6],
+    [2, -0.2],
+    [-1.8, 1.2],
+    [-1, 1.4],
+    [1.2, 0.2],
+    [-0.4, 1.2],
+    [-0.4, 1.4],
+    [-1.4, 0],
+    [0.4, -1.2],
+    [2, -1.6],
+    [-1, -1.4],
+    [-1.2, 0.6],
+    [-0.2, 0.6],
+    [1.8, -0.2],
+    [-0.8, 1],
+    [-0.4, -0.8],
+    [1.2, 1.8],
+    [-1, 1.8],
+    [-0.4, -1.2],
+    [-0.4, 0.8],
+    [0.6, -0.6],
+    [-2, 0.4],
+    [-0.2, -0.2],
+    [-0.8, -1],
+    [0.2, -1.6],
+    [0.8, -0.2],
+    [0.6, -1.6],
+    [0.4, 1.2],
+    [-1.2, 1.6],
+    [0, -1.8],
+    [-1.4, 1.6],
+    [-1.4, 1.6],
+    [0.4, 0.6],
+    [-2, -0.8],
+    [1.2, 1],
+    [-0.6, 0.2],
+    [-1.8, -1.8],
+    [1.8, 0.4],
+    [0.4, 0.6],
+    [1, -1],
+    [0.4, 1.8],
+    [0.2, -1.6],
+    [1.6, 1],
+    [-1, 0.8],
+    [1, -1.2],
+    [-0.2, 0.4],
+    [-2, -2],
+    [-0.8, 1.8],
+    [-0.4, 2],
+    [0.6, -0.2],
+    [1.2, -1],
+    [1.8, 0.8],
+    [-0.4, -1.6],
+    [0, 1.6],
+    [-1.2, -0.4],
+    [1.2, 1],
+    [-0.6, 0.2],
+    [1.2, 0.2],
+    [-1.6, 1],
+    [-1.8, -0.4],
+    [0.8, 1.2],
+    [-1.4, 1.8],
+    [0.8, 0.8],
+    [-0.2, 0.4],
+    [1.4, -0.8],
+    [1, 1.4],
+    [0.4, -2],
+    [-0.6, -0.8],
+    [1.6, 1],
+    [0.2, 1.4],
+    [-0.8, 1.4],
+    [-1.6, 0.8],
+    [-0.6, 0.8],
+    [1.2, -0.4],
+    [0, 0.6],
+    [-1.2, -0.4],
+    [2, -0.4],
+    [1.6, -0.8],
+    [-0.2, -0.2],
+    [-1.6, 1.2],
+    [-1.4, 0.6],
+    [-1.2, -1],
+    [0.8, 1.4],
+    [1.6, -0.8],
+    [1.6, 0],
+    [1.8, 0.8],
+    [-0.2, 0.6],
+    [-1.6, -0.2],
+    [1.8, -0.8],
+    [-0.4, -0.2],
+    [0.2, -1],
+    [-1.4, 1.2],
+    [1.6, 1.6],
+    [-2, 0.2],
+    [-1.2, 0.6],
+    [-1.2, -1],
+    [0, 1.8],
+    [-0.8, 1],
+    [0.2, -1],
+    [0, 0.2],
+    [2, -0.6],
+    [-0.6, 0.4],
+    [-0.8, 1.6],
+    [-2, 0.4],
+    [1.8, 0.6],
+    [-1.4, -0.4],
+    [0.2, -1.6],
+    [1, 0.2],
+    [1.2, -1.4],
+    [1.4, 0.6],
+    [1.6, -0.8],
+    [0.4, 1.8],
+    [1.4, 1.6],
+    [1, -0.4],
+    [1.2, 0.6],
+    [1.8, 1],
+    [-1.2, 0.6],
+    [-0.6, 1],
+    [1.2, 0.4],
+    [-1.4, 1.4],
+    [-1.4, -1],
+    [0.2, -0.8],
+    [-1.4, 2],
+    [0.8, -0.6],
+    [0.4, -1],
+    [0, -1],
+    [-2, -1.8],
+    [-0.2, 1.8],
+    [0.2, 1.4],
+    [0, -1.2],
+    [1.4, 0.6],
+    [-1.4, -0.2],
+    [-1.4, -0.6],
+    [0.2, -1.4],
+    [-0.8, -1.8],
+    [-1.4, 0.6],
+    [1, -0.6],
+    [0.6, -1.2],
+    [-1.8, -0.8],
+    [-1, 0.4],
+    [1, -0.8],
+    [1, 0],
+    [0.2, -1.8],
+    [1.4, 1.8],
+    [-1.8, 0.8],
+    [1.4, 1.4],
+    [1.4, -0.8],
+    [1.2, -0.6],
+    [1.8, 1],
+    [0.2, -1.8],
+    [-1, -2],
+    [-2, 0.2],
+    [0.4, 1.8],
+    [-2, -0.6],
+    [0.8, -0.4],
+    [1.2, 0],
+    [0.8, -1.6],
+    [1.8, -1.2],
+    [0.2, -1.6],
+    [0.8, -1.2],
+    [-1, 0.6],
+    [-0.6, 1.2],
+    [1, -1.4],
+    [-1.8, -1.4],
+    [-0.8, -0.8],
+    [-0.6, -2],
+    [1.2, -1],
+    [2, 1.6],
+    [0, 0.8],
+    [1, -1.4],
+    [-1, 1],
+    [-1.6, 1.6],
+    [-1, -0.4],
+    [-0.8, 0],
+    [0, 0.2],
+    [-0.2, 1.4],
+    [0.2, 1],
+    [-0.4, 1.6],
+    [1.2, 1],
+    [-1.2, -1],
+    [-2, -1.2],
+    [-1.2, 0.6],
+    [1.6, -1.2],
+    [0, -1.8],
+    [2, -1],
+    [-1, 0.8],
+    [-1.6, 0.8],
+    [1.4, 1.4],
+    [-1, 0],
+    [0.2, 0],
+    [0.6, -1.4],
+    [-0.4, -0.8],
+    [1.4, 0.8],
+    [0.8, 1.8],
+    [2, -0.8],
+    [0.2, -0.6],
+    [1.2, -1.4],
+    [0.4, -1.6],
+    [-1.8, -0.6],
+    [0.6, 0.8],
+    [1.4, 1],
+    [-1.8, 0.4],
+    [1.2, 1],
+    [-0.8, -0.8],
+    [0.8, -1.6],
+    [0.4, 1.2],
+    [-1, -0.4],
+    [1.8, -0.4],
+    [-0.2, -1],
+    [-0.6, 1.2],
+    [-1.8, 0.6],
+    [0.6, 1.2],
+    [-1.8, 0],
+    [-1.6, 1.6],
+    [0.6, -0.2],
+    [1.4, 0.8],
+    [-1, -1.4],
+    [-1.2, -0.4],
+    [1.4, -1.2],
+    [0, -1.6],
+    [0.4, -0.4],
+    [-0.2, 1.6],
+    [-0.4, -1.2],
+    [1.4, 1.2],
+    [-1.6, -0.8],
+    [1.4, 0.2],
+    [-2, 0.8],
+    [1, -1.2],
+    [-1.2, -2],
+    [1.8, -1.8],
+    [0.6, -1],
+    [1, 1],
+    [0.2, -0.6],
+    [1.2, 0.6],
+    [-0.6, -2],
+    [0.8, 1.6],
+    [-1.8, 0.2],
+    [0.2, -1.6],
+    [0.6, 1.8],
+    [-0.6, 0.8],
+    [-0.6, 0.8],
+    [-1.8, 1.4],
+    [1.4, 1.6],
+    [-2, 0.2],
+    [-1.2, -1.8],
+    [-2, -1.8],
+    [0.4, -0.4],
+    [1, 0.8],
+    [-1.8, 1.2],
+    [-0.6, 1.6],
+    [-0.6, -0.2],
+    [1, -1],
+    [0.6, 0.2],
+    [-1.8, -0.6],
+    [-0.8, 0.4],
+    [1.4, -1.2],
+    [1.8, 0.2],
+    [1.2, -0.4],
+    [-0.6, 1.2],
+    [0, -0.8],
+    [-1.8, 0],
+    [0.6, -0.4],
+    [-1.6, -1.4],
+    [1.2, 1.8],
+    [0.8, -1.8],
+    [0.4, -1.4],
+    [1, 0.2],
+    [0.2, -2],
+    [-1.2, 0.4],
+    [-1.6, -0.2],
+    [-1.8, 1],
+    [1, -1.6],
+    [1.4, 0.4],
+    [-1.2, -0.2],
+    [-1.8, -1.6],
+    [-1.2, 1.8],
+    [-1.4, 0.8],
+    [-0.6, -0.8],
+    [1, 0.6],
+    [-1.8, -1.2],
+    [-1.2, 0.2],
+    [1, 0],
+    [0.4, -1.6],
+    [-1.4, 0],
+    [-1.2, 0.8],
+    [-1, -0.6],
+    [1.2, -0.2],
+    [-0.2, -1.4],
+    [-1.8, 0.2],
+    [0, 0],
+    [-0.2, 2],
+    [0.4, 1.2],
+    [-0.2, 0],
+    [1.2, 1.6],
+    [0.6, 0],
+    [-0.6, -1.4],
+    [-0.6, -0.8],
+    [-1.2, -0.2],
+    [-0.6, 2],
+    [0.2, -0.8],
+    [-1.8, -0.4],
+    [0.4, -0.6],
+    [-1.2, 0.8],
+    [1.8, -1.6],
+    [1.8, 0.4],
+    [0.2, 0.4],
+    [-1.6, 0],
+    [-1.2, -1.8],
+    [0.6, 2],
+    [1.2, -0.8],
+    [1.6, 1.2],
+    [0.6, 1.8],
+    [1, 1.6],
+    [2, 0.2],
+    [0.6, 0.2],
+    [-1.8, 1.8],
+    [-0.6, 0],
+    [-0.2, -1.6],
+    [-0.4, -1.8],
+    [0.4, -1.4],
+    [0.6, 1.8],
+    [-1, 1.4],
+    [-1.6, 0.8],
+    [-0.4, -0.4],
+    [0.8, 2],
+    [1.8, 1.2],
+    [1.2, -1.8],
+    [-0.6, 1.8],
+    [-1.6, 0.4],
+    [0.2, 0],
+    [-0.6, 0.8],
+    [0.4, 1.6],
+    [-1.2, 1.2],
+    [-1, -0.2],
+    [-1.6, -0.2],
+    [-2, -1.8],
+    [-1, -1.2],
+    [-1.2, 1],
+    [1.8, -0.4],
+    [-1.8, -1],
+    [-0.8, -1.2],
+    [0, 0.2],
+    [1.6, 0],
+    [-1.6, 1],
+    [1, 1.4],
+    [-0.4, 1.4],
+    [1.6, 0],
+    [1.8, -0.6],
+    [0.6, 0],
+    [1.2, -1.2],
+    [-1.8, 0.2],
+    [-1.2, 1.4],
+    [1.8, -0.4],
+    [0.8, 0.2],
+    [1.6, 1.8],
+    [0, 0.2],
+    [-1.8, 2],
+    [0, 0.2],
+    [-0.6, 1.6],
+    [-1.6, 1.4],
+    [0.6, 1.6],
+    [-1, 0.8],
+    [0.4, 0.8],
+    [0.2, -0.6],
+    [-0.8, -1.8],
+    [0.6, -2],
+    [0.8, 0],
+    [-1.4, 1],
+    [-1, -1.4],
+    [-1.8, -0.4],
+    [0.2, 1],
+    [1.8, -1.4],
+    [0.6, 0.2],
+    [0.4, 1.6],
+    [-0.6, -1],
+    [0, -0.2],
+    [-0.6, 0.2],
+    [0.8, 1.8],
+    [0.2, 1.8],
+    [-0.8, -0.2],
+    [1.4, 1.2],
+    [-1.4, -1.2],
+    [1.8, 0.4],
+    [-1.4, -1.4],
+    [-1, 0.2],
+    [1.6, 1.6],
+    [1.2, 0.8],
+    [0, -0.2],
+    [-0.8, 1.6],
+    [-1.8, -0.8],
+    [0, 1.2],
+    [1, 1.4],
+    [-1.2, 0.4],
+    [-1, -1.2],
+    [-0.4, 1.2],
+    [-1, 1.4],
+    [0.2, 2],
+    [-0.2, 0.6],
+    [0.4, -1.4],
+    [-1.8, -1.4],
+    [0.4, 0.6],
+    [-1.2, -0.6],
+    [0.4, -1.6],
+    [-0.2, 0.6],
+    [-2, -0.2],
+    [1, 0.8],
+    [-1.6, 0.4],
+    [-0.8, 0.8],
+    [0.6, 0],
+    [1.6, 0],
+    [-1.8, 0.4],
+    [-0.2, 1.4],
+    [0.2, 0.6],
+    [-1.6, 0.6],
+    [1.6, 1.8],
+    [-1.8, 0.4],
+    [1.6, -1],
+    [0, -0.4],
+    [-0.6, -1.6],
+    [0.2, 1.6],
+    [1.4, -1.4],
+    [0, -1.2],
+    [-0.6, 0.6],
+    [0.4, 0.4],
+    [2, -1.2],
+    [1, -0.4],
+    [-0.2, 0.8],
+    [-1.6, -1.2],
+    [0.6, -1],
+    [-1.4, 0.4],
+    [1.2, -1.2],
+    [2, 1.4],
+    [1.2, 1.2],
+    [2, 1],
+    [1.2, -1.4],
+    [-1, -1.6],
+    [0.2, -0.4],
+    [1.2, 1],
+    [1.2, -0.4],
+    [-2, -1.6],
+    [-2, -0.8],
+    [1.4, -2],
+    [1.8, 1.8],
+    [-0.2, 0],
+    [-1.6, 0.6],
+    [0.8, -2],
+    [0.8, 1.6],
+    [-0.6, 1.8],
+    [1.2, 1.6],
+    [1.6, -1.2],
+    [-1.2, 1],
+    [-2, -1.4],
+    [1, 1.2],
+    [-2, 1.6],
+    [-0.8, 0.8],
+    [0.8, 1],
+    [-1.6, 0.6],
+    [1, 1.6],
+    [0, 0.2],
+    [-1.2, 1.6],
+    [1.6, 2],
+    [0.8, -1.4],
+    [1.2, 1.8],
+    [1.4, -1.2],
+    [0.8, -2],
+    [-0.2, 0],
+    [0.8, 0.6],
+    [-1, -0.2],
+    [0.8, 1.8],
+    [-0.4, 1.4],
+    [-0.4, -0.2],
+    [-1.2, -1.4],
+    [0.2, -0.2],
+    [-0.4, 0.8],
+    [-0.4, -1.4],
+    [1.2, 1.4],
+    [-0.4, -0.6],
+    [-1.2, 2],
+    [1.4, 0.2],
+    [1.4, 1.6],
+    [0.2, 1.6],
+    [-1.8, 0.4],
+    [1, 0],
+    [-1.4, 0.6],
+    [0, 1.8],
+    [0.2, 0.4],
+    [-0.2, -1.4],
+    [-0.2, -1],
+    [0.6, -1.8],
+    [-0.8, 0.2],
+    [0.8, 1],
+    [-0.8, -0.8],
+    [0.2, -0.6],
+    [-0.8, -0.2],
+    [0.8, 1.4],
+    [-2, -1.2],
+    [1.2, 1.4],
+    [-0.4, 0.2],
+    [1.2, -0.6],
+    [-0.4, 1.4],
+    [1.8, 0.8],
+    [-1.8, 1.8],
+    [-1.2, -1.4],
+    [0, 1],
+    [-0.4, -1.4],
+    [0, 2],
+    [1.8, 0.4],
+    [0.8, -1.4],
+    [0.8, 1.6],
+    [1.6, 0.8],
+    [-0.8, -1.6],
+    [0.4, 0.2],
+    [1.2, 1.4],
+    [1.4, -1],
+    [-1.4, -1.6],
+    [0.2, 0],
+    [-1.2, -1.8],
+    [1, 0.8],
+    [-0.2, -0.4],
+    [-0.8, -2],
+    [-2, 1.8],
+    [0.2, 0.8],
+    [2, 1.8],
+    [0.2, 0.8],
+    [0, 0.4],
+    [0.8, 0.2],
+    [-1.8, -1.8],
+    [0, -1.2],
+    [0.2, 1.4],
+    [0.8, -1.6],
+    [-1.2, -1],
+    [-1.2, 0.4],
+    [-1.2, 1.6],
+    [-1.8, 0.8],
+    [1, 1],
+    [-0.4, 0.8],
+    [1.6, -0.6],
+    [-1.2, 1.2],
+    [1.2, -0.2],
+    [1.6, -1.4],
+    [0, 0.6],
+    [-1.2, 0.2],
+    [1.8, 0],
+    [-1.6, 1.6],
+    [0.4, -0.8],
+    [-1.6, 1.4],
+    [0, 0.2],
+    [0.6, -1.6],
+    [-1, -1.2],
+    [-0.8, 0],
+    [-1.6, -1.4],
+    [-1.4, 1.4],
+    [-0.4, 0.6],
+    [-1.8, 1.4],
+    [-1.8, -2],
+    [-1.6, 1.6],
+    [-0.2, 0.6],
+    [0.4, -0.8],
+    [1.8, -0.4],
+    [1.4, 1.6],
+    [1.4, 0.2],
+    [-1.4, -1.4],
+    [1.4, 2],
+    [0.6, 1],
+    [0, 1.6],
+    [-0.8, -1],
+    [-1.4, -1.6],
+    [-1.4, 0.8],
+    [-0.6, -1.8],
+    [0.2, 1.8],
+    [1.6, 0.2],
+    [-0.4, -1.2],
+    [2, -1.2],
+    [-0.2, 1.4],
+    [-0.6, 0.8],
+    [-1.2, 0.4],
+    [0.2, 0.4],
+    [1, -0.2],
+    [2, 0.8],
+    [-1, -0.4],
+    [1.8, 1.2],
+    [0.6, 1.6],
+    [1, 1.8],
+    [1.4, -1.8],
+    [-0.8, -1],
+    [0.8, -1.6],
+    [0, 0.8],
+    [-0.2, 1],
+    [2, 1.8],
+    [-1.2, -0.8],
+    [-1.2, 1.8],
+    [0.8, -0.2],
+    [1.2, 0.4],
+    [1.8, 1],
+    [-1.4, 0.4],
+    [-1.6, -0.8],
+    [0.6, 0],
+    [0.4, -1.2],
+    [-1, -1.6],
+    [-2, 1.8],
+    [-0.8, -1.4],
+    [-1.6, 0.6],
+    [1.2, 0.4],
+    [-0.2, -1.2],
+    [0.6, -1.8],
+    [1.8, 1.8],
+    [-0.8, 0],
+    [1.2, 0.6],
+    [-1.4, -1.8],
+    [1.8, 0],
+    [-0.8, 0.6],
+    [1.4, 1],
+    [0, -1.6],
+    [-0.4, 0.6],
+    [1.4, 1],
+    [1.8, 0.2],
+    [0.6, -1.6],
+    [-0.8, -0.8],
+    [-1.2, -0.4],
+    [1, -1.2],
+    [-1.8, -0.4],
+    [-1.6, 1],
+    [2, 1.8],
+    [1.4, 1.2],
+    [0.4, -1.2],
+    [1.6, -0.2],
+    [-0.6, -1.2],
+    [1, 1.2],
+    [-1.8, -1],
+    [-0.6, -1.2],
+    [1.6, 0.8],
+    [0.8, 1.6],
+    [-0.6, -1.8],
+    [-0.4, -0.4],
+    [0.8, -1],
+    [-1.8, -1.4],
+    [0.4, 0],
+    [1.4, 1],
+    [-1, -2],
+    [-0.2, -0.6],
+    [1.2, 0.8],
+    [1.8, 1.6],
+    [1.8, -0.6],
+    [0.4, 2],
+    [-1.6, -0.4],
+    [1.2, -1.6],
+    [-1.6, 1.2],
+    [1.6, -0.2],
+    [0.6, 1.2],
+    [1.4, 0.8],
+    [0.2, 2],
+    [-0.6, -0.4],
+    [0, -0.4],
+    [0.4, 1.6],
+    [-1.6, -1.2],
+    [1.8, -0.6],
+    [-0.2, 1.2],
+    [0.6, 0.4],
+    [0.2, -1.2],
+    [-2, -1],
+    [0.8, 0.2],
+    [0.6, -0.8],
+    [-1.8, -0.6],
+    [0.8, -1.8],
+    [0.6, 0.8],
+    [1.4, 0.6],
+    [-1.4, 1.4],
+    [0, -1.4],
+    [-2, 1.4],
+    [0.8, -1],
+    [1.4, -0.6],
+    [-1.8, -0.4],
+  ],
+};
+/* BLACK HOLE ADDON */
+/* Adds a black hole with gravitational attraction into the addons menu upgrades */
+
+// The black hole settings
+const range = 1e5;
+const mass = 1e13;
+const G = 6.67e-11;
+const sizeChangeMultiplier = 2;
+const ignored = [];
+const ignoredTypes = ["wall"];
+
+// Precalculated things
+const rangeSquared = range ** 2;
+const a = G * mass;
+
+// The actual black hole tank
+exports.blackHole = {
+  PARENT: "genericTank",
+  COLOR: "black",
+  LABEL: "Black Hole",
+  BODY: {
+    DAMAGE: 0,
+    HEALTH: 1,
+    SPEED: 10,
+    FOV: 3,
+  },
+  ON: [
+    {
+      event: "tick",
+      handler: ({ body }) => {
+        // Runs every tick to attract nearby entities
+        // Get the black hole's id and position
+        const { id, x: x1, y: y1 } = body;
+        // Loop over all the entities
+        for (let entity of entities) {
+          // Skip it if it's our body or it should be ignored
+          if (
+            entity.id === id ||
+            ignoredTypes.includes(entity.type) ||
+            ignored.some((func) => func(entity))
+          )
+            continue;
+          // Get its position
+          const { x: x2, y: y2 } = entity;
+          // Calculate the distance
+          let xx = x2 - x1;
+          let yy = y2 - y1;
+          let dist = xx ** 2 + yy ** 2;
+          // Check if it's in range
+          if (dist <= rangeSquared) {
+            // Get the attraction force
+            let F = a / dist;
+            entity.velocity.x -= F * xx;
+            entity.velocity.y -= F * yy;
+            // Change its size
+            entity.sizeMultiplier -= F * sizeChangeMultiplier;
+            // And kill it if its size is equal or less than zero
+            if (entity.sizeMultiplier <= 0) entity.kill();
+          }
+        }
+      },
+    },
+    {
+      event: "define",
+      handler: ({ body }) => {
+        // Runs when an entity is defined to the black hole
+        // Make sure we disable collisions and avoid getting pushed around
+        body.removeFromGrid();
+        body.skipLife = true;
+      },
+    },
+  ],
+};
+
+// Add it to the addons menu upgrades
+exports.addons.UPGRADES_TIER_0.push("blackHole");
+/** FIREWORKS ADDON **/
+
+if (!c.FIREWORKS)
+  console.log(
+    "[fireworks.js] c.FIREWORKS is disabled. Set it to true to enable this addon.",
+  );
+else console.log("[fireworks.js] Fireworks enabled.");
+console.log(
+  "[fireworks.js] For more info visit: https://github.com/P-R-2000/aps-plus-plus-addons/tree/main/fireworks",
+);
+
+const fireworkShapes = c.FIREWORKS?.SHAPES ?? [
+  0,
+  3,
+  4,
+  "M 0 -1 L 0.3 -0.4 L 1 -0.4 L 0.6 0.3 L 0.8 1 L 0 0.6 L -0.8 1 L -0.6 0.2 L -1 -0.4 L -0.4 -0.4 Z",
+];
+const fireworkColors = c.FIREWORKS?.COLORS ?? [
+  ["blue", "red"],
+  ["red", "orange"],
+  ["blue", "cyan"],
+  ["purple", "pink"],
+  ["lightGreen", "green"],
+];
+const fireworkCountMin = c.FIREWORKS?.MIN ?? 6;
+const fireworkCountMax = c.FIREWORKS?.MAX ?? 22;
+const fireworkSpeed = c.FIREWORKS?.SPEED ?? 7;
+const fireworkRange = c.FIREWORKS?.RANGE ?? 25;
+
+exports.genericFirework = {
+  PARENT: "bullet",
+  LABEL: "Fireworks",
+  SIZE: c.FIREWORKS?.SIZE ?? 5,
+  BODY: {
+    HEALTH: c.FIREWORKS?.HEALTH ?? 10,
+    DAMAGE: c.FIREWORKS?.DAMAGE ?? 10,
+  },
+};
+
+let fireworkShapesClasses = [];
+for (let i = 0; i < fireworkShapes.length; i++) {
+  let name = `fireworkShape${i + 1}`;
+  exports[name] = {
+    PARENT: "genericFirework",
+    SHAPE: fireworkShapes[i],
+  };
+  fireworkShapesClasses.push(name);
+}
+
+function spawnFireworks(position) {
+  let definition =
+    fireworkShapesClasses[
+      Math.floor(Math.random() * fireworkShapesClasses.length)
+    ];
+  let colors =
+    fireworkColors[Math.floor(Math.random() * fireworkColors.length)];
+  let count =
+    Math.floor(fireworkCountMin / colors.length) * colors.length +
+    Math.floor(
+      Math.random() * ((fireworkCountMax - fireworkCountMin) / colors.length),
+    ) *
+      colors.length;
+
+  let facing = (Math.PI * 2) / count;
+
+  for (let i = 0; i < count; i++) {
+    let e = new Entity(position);
+    e.isFirework = true;
+    e.define(definition);
+    e.colorUnboxed.base = colors[i % colors.length];
+    e.compressColor();
+    e.facing = facing * i;
+    e.accel.x = Math.cos(facing * i) * fireworkSpeed;
+    e.accel.y = Math.sin(facing * i) * fireworkSpeed;
+    e.range = fireworkRange;
+    e.team = TEAM_ROOM;
+  }
+}
+
+module.exports = ({ Events }) => {
+  Events.on("spawn", (body) => {
+    body.on("dead", () => {
+      if (
+        c.FIREWORKS &&
+        !body.isFirework &&
+        (typeof c.FIREWORKS?.CHECK_ENTITY === "function"
+          ? c.FIREWORKS.CHECK_ENTITY(body)
+          : Array.isArray(c.FIREWORKS?.ENTITY_TYPES)
+            ? c.FIREWORKS?.ENTITY_TYPES.includes(body.type)
+            : true)
+      ) {
+        spawnFireworks({ x: body.x, y: body.y });
+      }
+    });
+  });
+  if (c.FIREWORKS?.SPAWN_EVERY_MS)
+    setInterval(() => {
+      spawnFireworks(room.random());
+    }, c.FIREWORKS.SPAWN_EVERY_MS);
+};
 
 exports.testing.UPGRADES_TIER_0 = [
   "features",
@@ -1959,6 +3119,18 @@ exports.testing.UPGRADES_TIER_0 = [
   "mummifier",
   "tracker3",
   "nailer",
+  "tier4tanks",
+  "blocker",
+  "doubleFlamethrower",
+  "tankThatShootsTanks",
+];
+exports.tier4tanks.UPGRADES_TIER_0 = [
+  "tier4assass",
+  "tier4Triple",
+  "mechsingle",
+  "tier4FlankGuard",
+  "tier4Trapper",
+  "tier4Desmos",
 ];
 exports.features.UPGRADES_TIER_0 = [
   "diamondShape",

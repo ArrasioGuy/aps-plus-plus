@@ -15,6 +15,14 @@ module.exports = {
     spray: 1,
     resist: 1,
   },
+  raven: {
+    reload: 3.5,
+    health: 0.5,
+    damage: 2.5,
+    pen: 5,
+    speed: 4,
+    maxSpeed: 5,
+  },
   small: { size: 0.8 },
   micro: { size: 0.4 },
   weak: {
@@ -73,6 +81,8 @@ module.exports = {
     maxSpeed: 2.75,
   },
   shot: { reload: 0.01, size: 1, spray: 5, density: 1.5 },
+  tier4assass: { damage: 2.5, speed: 3.25, pen: 2.5, health: 1.5, reload: 3.5 },
+  fastreload: { reload: 0.5 },
   // Bases
   basic: {
     reload: 18,
@@ -89,6 +99,9 @@ module.exports = {
     size: 0.6,
     speed: 2,
     spray: 0.1,
+  },
+  fastdrone: {
+    speed: 3,
   },
   big: {
     SIZE: 1.5,
@@ -496,6 +509,7 @@ module.exports = {
   babyfactory: { reload: 1.5, maxSpeed: 1.35 },
   mehdrone: { size: 1.35, health: 1.75, speed: 1.125 },
   bigdrone: { size: 1.8, health: 2.5, speed: 1.25 },
+  biggerdrone: { size: 2.125, health: 5, speed: 1.5 },
   mothership: {
     reload: 1.25,
     pen: 1.1,
@@ -790,4 +804,5 @@ module.exports = {
     spray: 0.001,
   },
   noRandom: { shudder: 0, spray: 0 },
+  MoreDamage: { damage: 2.5 },
 };
