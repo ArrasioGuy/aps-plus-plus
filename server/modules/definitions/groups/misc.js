@@ -6337,6 +6337,8 @@ exports.missler = {
 exports.eliteEgg = {
   PARENT: "miniboss",
   LABEL: "Elite Egg",
+  SCORE: 69420,
+  UPGRADE_LABEL: "This Boss Give 69420 Score HAHAHAHA FUnNi!1111!1",
   SIZE: 20,
   COLOR: 5,
   TURRETS: [
@@ -6456,6 +6458,8 @@ exports.eliteEgg = {
 exports.EliteEggDestroyer = {
   PARENT: "miniboss",
   LABEL: "Elite Egg",
+  UPGRADE_LABEL: "This Boss Give 69420 Score HAHAHAHA FUnNi!1111!1",
+  SCORE: 69420,
   SIZE: 20,
   COLOR: 5,
   TURRETS: [
@@ -6536,6 +6540,19 @@ exports.EliteEggDestroyer = {
     },
   ],
 };
+exports.negativenumbertest = {
+  PARENT: "genericTank",
+  LABEL: "negativenumbertest(crash)",
+  GUNS: [
+    {
+      POSITION: [-18, -8, 1, 0, 0, 180, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+  ],
+};
 
 exports.pastdaily.UPGRADES_TIER_0 = [
   "doubleFlamethrower",
@@ -6570,7 +6587,7 @@ exports.OPTanks.UPGRADES_TIER_0 = [
   "whirlwindop",
   "oppredator",
 ];
-exports.todaysdailytank.UPGRADES_TIER_0 = ["rapturev2"];
+exports.todaysdailytank.UPGRADES_TIER_0 = ["rocketeer"];
 exports.eventdeveloper.UPGRADES_TIER_3 = [
   "basic",
   "pastdaily",
@@ -6613,6 +6630,9 @@ exports.customsiegestuff.UPGRADES_TIER_0 = [
   "bob",
   "metalmach",
   "spiniBoi",
+  "fallenPentagon",
+  "eliteEgg",
+  "EliteEggDestroyer",
 ];
 exports.betateanks.UPGRADES_TIER_0 = [
   //"florr_tank",
