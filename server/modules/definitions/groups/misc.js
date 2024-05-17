@@ -5969,6 +5969,52 @@ Class.menu = {
     },
   ],
 };
+Class.trainPart1 = {
+  PARENT: "booster",
+  LABEL: "",
+  TURRETS: [
+    {
+      POSITION: [20, -22, 0, 0, 90 / 4, 0],
+      TYPE: "assassin",
+      VULNERABLE: true,
+    },
+  ],
+};
+Class.trainPart2 = {
+  PARENT: "assassin",
+  LABEL: "",
+  TURRETS: [
+    {
+      POSITION: [20, -22, 0, 0, 90 / 3, 0],
+      TYPE: "trainPart1",
+      VULNERABLE: true,
+    },
+  ],
+};
+Class.trainPart3 = {
+  PARENT: "booster",
+  LABEL: "",
+  TURRETS: [
+    {
+      POSITION: [20, -22, 0, 0, 90 / 2, 0],
+      TYPE: "trainPart2",
+      VULNERABLE: true,
+    },
+  ],
+};
+Class.train = {
+  PARENT: "developer",
+  LABEL: "Europe Nexus Be Like",
+  UPGRADE_TOOLTIP:
+    "[DEV NOTE] this is a very early prototype and probably won't work so well lol",
+  TURRETS: [
+    {
+      POSITION: [20, -22, 0, 0, 90, 0],
+      TYPE: "trainPart3",
+      VULNERABLE: true,
+    },
+  ],
+};
 Class.tier4tanks = {
   PARENT: "menu",
   LABEL: "Tier 4",

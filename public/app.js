@@ -5,9 +5,19 @@ import { global } from "./lib/global.js";
 import { settings } from "./lib/settings.js";
 import { Canvas } from "./lib/canvas.js";
 import { color } from "./lib/color.js";
+//import { mobileUI } from "./lib/mobileUI.js";
 import { gameDraw } from "./lib/gameDraw.js";
 import * as socketStuff from "./lib/socketInit.js";
-(async function (util, global, settings, Canvas, color, gameDraw, socketStuff) {
+(async function (
+  util,
+  global,
+  settings,
+  Canvas,
+  color,
+  gameDraw,
+  socketStuff,
+  //mobileUI,
+) {
   let { socketInit, gui, leaderboard, minimap, moveCompensation, lag, getNow } =
     socketStuff;
   // fetch("changelog.md", { cache: "no-cache" })
@@ -2707,7 +2717,7 @@ import * as socketStuff from "./lib/socketInit.js";
   let getDeath = () => {
     let txt = "";
     if (global.finalKillers.length) {
-      txt = "🔪 Succumbed to";
+      txt = "🔪 Died to";
       for (let e of global.finalKillers) {
         txt +=
           " " + util.addArticle(util.getEntityImageFromMockup(e).name) + " and";
@@ -2759,7 +2769,7 @@ import * as socketStuff from "./lib/socketInit.js";
       x - 170,
       y + 25,
       50,
-      color.guiwhite,
+      color.rainbow,
     );
     drawText(
       "⌚ Survived for " +
