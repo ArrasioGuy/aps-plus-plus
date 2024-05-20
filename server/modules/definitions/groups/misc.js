@@ -1590,7 +1590,7 @@ Class.lorry = {
       /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
       POSITION: [12, 10, 2.4, 8, 0, 0, 0],
       PROPERTIES: {
-        SHOOT_SETTINGS: combineStats([g.basic]),
+        SHOOT_SETTINGS: combineStats([g.basic, g.shot]),
         TYPE: "bullet",
       },
     },
@@ -6015,10 +6015,21 @@ Class.train = {
     },
   ],
 };
+Class.SkibibiToiliet = {
+  PARENT: "menu",
+  LABEL: "I Hate Doing This BROOOOO",
+  SHAPE: "whyyyyyyyyy.jpg",
+};
 Class.tier4tanks = {
   PARENT: "menu",
   LABEL: "Tier 4",
 };
+Class.gatsBody = {
+  PARENT: "menu",
+  LABEL: "GUNSSSSS????????",
+};
+
+Class.SkibibiToiliet.UPGRADES_TIER_1 = ["betatanksforfirend"];
 
 Class.pastdaily.UPGRADES_TIER_0 = [
   "doubleFlamethrower",

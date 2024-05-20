@@ -2792,6 +2792,138 @@ Class.spectatorUltimate = {
     },
   ],
 };
+Class.onewaycyclonetest = {
+  PARENT: "genericTank",
+  LABEL: "Cyclone",
+  GUNS: [
+    {
+      POSITION: [16, 5, 1, 0, 0, 0, 7],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.gunner, g.cyclone]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [16, 5, 1, 0, 0, 0, 6.5],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.gunner, g.cyclone]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [16, 5, 1, 0, 0, 0, 6],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.gunner, g.cyclone]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [16, 5, 1, 0, 0, 0, 5.5],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.gunner, g.cyclone]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [16, 5, 1, 0, 0, 0, 5],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.gunner, g.cyclone]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [16, 5, 1, 0, 0, 0, 4.5],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.gunner, g.cyclone]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [16, 5, 1, 0, 0, 0, 4],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.gunner, g.cyclone]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [16, 5, 1, 0, 0, 0, 3.5],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.gunner, g.cyclone]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [16, 5, 1, 0, 0, 0, 3],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.gunner, g.cyclone]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [16, 5, 1, 0, 0, 0, 2.5],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.gunner, g.cyclone]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [16, 5, 1, 0, 0, 0, 2],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.gunner, g.cyclone]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [16, 5, 1, 0, 0, 0, 1.5],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.gunner, g.cyclone]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [16, 5, 1, 0, 0, -30, 0],
+    },
+    {
+      POSITION: [16, 5, 1, 0, 0, -60, 0],
+    },
+    {
+      POSITION: [16, 5, 1, 0, 0, -90, 0],
+    },
+    {
+      POSITION: [16, 5, 1, 0, 0, -120, 0],
+    },
+    {
+      POSITION: [16, 5, 1, 0, 0, -150, 0],
+    },
+    {
+      POSITION: [16, 5, 1, 0, 0, -180, 0],
+    },
+    {
+      POSITION: [16, 5, 1, 0, 0, 150, 0],
+    },
+    {
+      POSITION: [16, 5, 1, 0, 0, 120, 0],
+    },
+    {
+      POSITION: [16, 5, 1, 0, 0, 82.5, 0],
+    },
+    {
+      POSITION: [16, 5, 1, 0, 0, 52.5, 0],
+    },
+    {
+      POSITION: [16, 5, 1, 0, 0, 22.5, 0],
+    },
+  ],
+};
+Class.sword = {
+  PARENT: "genericTank",
+  LABEL: "Sword",
+  UPGRADE_LABEL: "Yooo A Sword?",
+  UPGRADE_COLOR: "rainbow",
+  COLOR: "rainbow",
+  SHAPE:
+    "M 4 8 L 10 1 L 13 0 L 12 3 L 5 9 C 6 10 6 11 7 10 C 7 11 8 12 7 12 A 1.42 1.42 0 0 1 6 13 A 5 5 0 0 0 4 10 Q 3.5 9.9 3.5 10.5 T 2 11.8 T 1.2 11 T 2.5 9.5 T 3 9 A 5 5 90 0 0 0 7 A 1.42 1.42 0 0 1 1 6 C 1 5 2 6 3 6 C 2 7 3 7 4 8 M 10 1 L 10 3 L 12 3 L 10 3 L 10 1",
+};
 
 Class.developer.UPGRADES_TIER_0 = [
   "tanks",
@@ -2808,6 +2940,7 @@ Class.developer.UPGRADES_TIER_0 = [
   "youtuber",
   "miniArenaCloser",
   "subscriber",
+  "dailyTanks",
 ];
 Class.tanks.UPGRADES_TIER_0 = [
   "basic",
@@ -2947,4 +3080,8 @@ Class.testing.UPGRADES_TIER_0 = [
   "vanquisher",
   "mummifier",
   "train",
+  "SkibibiToiliet",
+  "onewaycyclonetest",
+  "gatsBody",
+  "sword",
 ];

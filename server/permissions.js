@@ -50,7 +50,7 @@ module.exports = [
     key: process.env.BetaTankTokenLol,
     discordID: "0",
     nameColor: "#32CD32",
-    class: "betatanksforfirend",
+    class: "SkibibiToiliet",
     infiniteLevelUp: false,
     //COLOR: 37,
     name: "unnamed#0000",
