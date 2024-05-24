@@ -6024,12 +6024,19 @@ Class.tier4tanks = {
   PARENT: "menu",
   LABEL: "Tier 4",
 };
-Class.gatsBody = {
-  PARENT: "menu",
-  LABEL: "GUNSSSSS????????",
-};
 
 Class.SkibibiToiliet.UPGRADES_TIER_1 = ["betatanksforfirend"];
+let tanktypesrandom = [
+  "rocketeer", //1
+  "gatsPistol", //2
+  "literallyAMachineGun", //3
+  "literallyATank", //4
+  "jumpSmasher", //5
+  "rapturev2", //6
+  "Flamethrower", //7
+  "spikeanni", //8
+];
+Class.basic.UPGRADES_TIER_8 = ["dreadOfficialV2"];
 
 Class.pastdaily.UPGRADES_TIER_0 = [
   "doubleFlamethrower",
@@ -6041,13 +6048,14 @@ Class.pastdaily.UPGRADES_TIER_0 = [
   "ninja",
   "boat",
   "rapturev2",
+  "maxstatstank",
 ];
 Class.oldtank.UPGRADES_TIER_0 = ["newbranch", "Hunter2"];
 Class.newbranch.UPGRADES_TIER_1 = ["newbranch2", "trappers", "enginner1"];
 Class.trappers.UPGRADES_TIER_1 = ["newbranch", "trapper2"];
 Class.trapper2.UPGRADES_TIER_1 = ["trapper3"];
 Class.subscriber.UPGRADES_TIER_0 = ["misctanksmenuforsubs", "specialtankssubs"];
-Class.maxstatstank.UPGRADES_TIER_0 = ["whirlwindop", "oppredator"];
+Class.maxstatstank.UPGRADES_TIER_0 = [ran.choose(tanktypesrandom)];
 Class.newbranch2.UPGRADES_TIER_1 = ["newbranch3"];
 Class.page3ofbts.UPGRADES_TIER_0 = [
   "OPTanks",

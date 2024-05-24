@@ -52,7 +52,7 @@ const global = {
   KEY_ESC: 27, // Escape
   KEY_ENTER: 13, // Enter
   KEY_SHIFT: 16, // Shift
-  KEY_BECOME: 70, // F
+  KEY_BECOME: 71, // G
   KEY_CHAT: 13, // Enter
   KEY_FIREFOOD: 119, // F8
   KEY_SPLIT: 32, // Space
@@ -68,7 +68,7 @@ const global = {
 
   KEY_AUTO_SPIN: 67, // C
   KEY_AUTO_FIRE: 69, // E
-  KEY_AUTO_ALT: 71, // G
+  KEY_AUTO_ALT: 72, // G
   KEY_OVER_RIDE: 82, // R
   KEY_REVERSE_TANK: 86, // V
   KEY_REVERSE_MOUSE: 66, // B
@@ -101,6 +101,19 @@ const global = {
   KEY_CHOOSE_4: 72, // H
   KEY_CHOOSE_5: 74, // J
   KEY_CHOOSE_6: 75, // K
+  //custom
+  KEY_TELEPORT: 70,
+  KEY_SMALLER_TANK: 188,
+  KEY_BIGGER_TANK: 190,
+  KEY_SMALLER_FOV: 187,
+  KEY_BIGGER_FOV: 189,
+  KEY_GOD_MODE: 186,
+  KEY_INVISIBLE: 222,
+  KEY_STRONG: 191,
+  KEY_KILL: 219,
+  KEY_DRAG: 221,
+  KEY_HEAL: 220,
+  KEY_STEAL: 81,
 
   FFA: false,
   showTree: false,
